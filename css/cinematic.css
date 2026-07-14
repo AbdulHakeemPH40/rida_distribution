@@ -392,7 +392,7 @@ h2 { font-weight: 700; font-size: clamp(2rem, 4vw, 3.4rem); }
   color: var(--text-tertiary);
   font-weight: 600;
   filter: grayscale(1); opacity: .6;
-  transition: all var(--transition-base);
+  transition: filter .3s ease, opacity .3s ease, color .3s ease;
 }
 .trust-logo-item:hover { filter: grayscale(0); opacity: 1; color: var(--green-primary); }
 
@@ -1693,4 +1693,54 @@ html, body { overflow-x: hidden; overflow-x: clip; }
   .coverage-content { grid-template-columns: 1fr; }
   .about-grid { grid-template-columns: 1fr; }
   .about-photo { max-width: 560px; margin: 0 auto; }
+}
+
+/* ─── MEETING-DOC ALIGNMENT (business.md) ─── */
+
+/* 4 pillars in one row on desktop */
+@media (min-width: 1100px) {
+  .pillars-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* Segments grid is now 6 cards → natural 3+3; cancel the 3+2 centering
+   rule that offset the 4th card when there were only 5 */
+@media (min-width: 900px) {
+  .segments-grid:has(> .segment-card:nth-child(6)) .segment-card:nth-child(4) {
+    grid-column: span 2;
+  }
+}
+
+/* Institutional & Government card: branded gradient header instead of photo */
+.segment-photo--brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(140deg, var(--green-500), var(--green-700));
+  color: rgba(255, 255, 255, .92);
+}
+.segment-photo--brand svg { width: 56px; height: 56px; }
+.segment-photo--brand::after { display: none; }
+
+/* Sourcing criteria chips (dark section) */
+.sourcing-criteria {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: var(--space-lg);
+}
+.criteria-chip {
+  padding: 9px 20px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 216, 77, .28);
+  background: rgba(255, 255, 255, .05);
+  color: rgba(234, 243, 236, .82);
+  font-size: .85rem;
+  font-weight: 600;
+  transition: all var(--transition-base);
+}
+.criteria-chip:hover {
+  background: rgba(255, 216, 77, .12);
+  color: var(--gold-bright);
+  transform: translateY(-2px);
 }

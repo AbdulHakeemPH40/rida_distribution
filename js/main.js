@@ -210,8 +210,8 @@ function initFrameworkTimeline() {
       number: '01',
       titleEn: 'Global Sourcing',
       titleAr: 'التوريد العالمي',
-      textEn: 'We source premium FMCG products from over 20 countries across Europe, Asia, the Middle East, and North America. Every product is vetted for quality, compliance, and market demand.',
-      textAr: 'نورد منتجات استهلاكية سريعة الحركة متميزة من أكثر من 20 دولة عبر أوروبا وآسيا والشرق الأوسط وأمريكا الشمالية. كل منتج يتم فحصه للجودة والامتثال ومتطلبات السوق.'
+      textEn: 'We source premium FMCG products from our five key markets — the Philippines, India, Thailand, Vietnam, and Africa. Every product is vetted for quality, compliance, and market demand.',
+      textAr: 'نورد منتجات استهلاكية متميزة من أسواقنا الخمسة الرئيسية — الفلبين والهند وتايلاند وفيتنام وأفريقيا. كل منتج يتم فحصه للجودة والامتثال ومتطلبات السوق.'
     },
     {
       number: '02',

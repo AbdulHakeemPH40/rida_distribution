@@ -791,10 +791,11 @@ p {
 .trust-logos {
   display: flex;
   align-items: center;
-  gap: var(--space-lg);
-  animation: scroll-logos 20s linear infinite;
+  gap: 0;
+  animation: scroll-logos 25s linear infinite;
   width: max-content;
-  padding-left: 0;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .trust-logos:hover {
@@ -804,17 +805,28 @@ p {
 .trust-logo-item {
   flex-shrink: 0;
   height: 40px;
-  width: auto;
   opacity: 0.4;
   filter: grayscale(100%);
-  transition: all var(--transition-base);
+  transition: filter 0.3s ease, opacity 0.3s ease, color 0.3s ease;
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: 1.4rem;
   color: var(--text-secondary);
   display: flex;
   align-items: center;
-  gap: var(--space-xs);
+  white-space: nowrap;
+  padding: 0 var(--space-lg);
+  position: relative;
+}
+
+.trust-logo-item::after {
+  content: '·';
+  position: absolute;
+  right: 0;
+  font-size: 1.6rem;
+  color: var(--muted-green);
+  opacity: 0.5;
+  font-weight: 400;
 }
 
 .trust-logo-item:hover {
@@ -831,8 +843,8 @@ p {
 }
 
 @keyframes scroll-logos {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
 }
 
 /* ─── 10. ABOUT SECTION ─── */
