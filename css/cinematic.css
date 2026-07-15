@@ -1818,13 +1818,24 @@ html, body { overflow-x: hidden; overflow-x: clip; }
    [data-theme="dark"] rules elsewhere are more specific and keep
    winning in dark mode, which already looked right. */
 .hero-photo {
-  opacity: .5;
-  filter: brightness(.8) saturate(1.05);
+  opacity: .38;
+  filter: brightness(.6) saturate(.9);
 }
 .hero::after {
-  background:
-    radial-gradient(120% 90% at 50% 0%, transparent 20%, var(--bg-primary) 100%),
-    linear-gradient(180deg, rgba(0,0,0,.45) 0%, rgba(0,0,0,.6) 45%, rgba(0,0,0,.8) 100%);
+  /* No radial layer here: a radial that "fades to var(--bg-primary)" is
+     fine in dark mode (bg-primary is near-black, so it fades to dark),
+     but in light mode bg-primary is near-white — that radial sat ON TOP
+     of the dark linear gradient below it (first-listed background =
+     topmost layer) and washed the whole scrim back out to flat gray,
+     which is exactly the muddy look reported. A single strong linear
+     scrim, blending to the page color only in the last 8% at the very
+     bottom edge, keeps the text zone uniformly dark. */
+  background: linear-gradient(180deg,
+    rgba(0,0,0,.62) 0%,
+    rgba(0,0,0,.72) 40%,
+    rgba(0,0,0,.8) 75%,
+    rgba(0,0,0,.82) 92%,
+    var(--bg-primary) 100%);
 }
 .hero-label {
   background: rgba(8,18,13,.55);
