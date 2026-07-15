@@ -32,3 +32,6 @@ scrape_err.txt
 # Large binary / temp (keep brand logos tracked)
 *.xlsx
 *.docx
+
+# Heavy source PNGs — run tools/optimize-images.py; the JPG is what ships
+assets/images/stock/*.png
