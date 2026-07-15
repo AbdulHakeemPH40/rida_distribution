@@ -216,7 +216,9 @@ h2 { font-weight: 700; font-size: clamp(2rem, 4vw, 3.4rem); }
   min-height: 100vh;
   background: transparent;
   overflow: hidden;
-  display: flex; align-items: center;
+  display: flex;
+  align-items: center;
+  padding: 0;
 }
 /* Aurora orbs */
 .hero::before {
@@ -238,8 +240,8 @@ h2 { font-weight: 700; font-size: clamp(2rem, 4vw, 3.4rem); }
   content: '';
   position: absolute; inset: 0;
   background:
-    radial-gradient(120% 90% at 50% 0%, transparent 50%, rgba(255,255,255,.35) 100%),
-    linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.08) 60%, rgba(255,255,255,.18) 100%);
+    radial-gradient(120% 90% at 50% 0%, transparent 40%, rgba(255,255,255,.12) 100%),
+    linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.04) 60%, rgba(255,255,255,.08) 100%);
   z-index: 1;
 }
 [data-theme="dark"] .hero::after {
@@ -1541,11 +1543,11 @@ h2 { font-weight: 700; letter-spacing: -0.03em; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center bottom; /* facility at the bottom, calm sky behind the headline */
+  object-position: center center;
   z-index: 0;
   opacity: .82;
   pointer-events: none;
-  filter: brightness(1.12) saturate(1.15);
+  filter: brightness(0.85) saturate(1.15);
 }
 [data-theme="dark"] .hero-photo { opacity: .45; filter: brightness(.7) saturate(.8); }
 /* keep the existing glow + fade layers and content above the photo */
@@ -1924,108 +1926,4 @@ html, body { overflow-x: hidden; overflow-x: clip; }
   border-bottom-color: rgba(0, 0, 0, 0.06) !important;
 }
 
-/* ═══════════ HERO V3 — FRAMED MEDIA PATTERN ═══════════
-   Text-over-photo needed endless scrim patching because the photo has
-   a giant baked-in RIDA wordmark that fights the headline. This is the
-   composition used by current premium corporate/SaaS sites (Linear,
-   Ramp, Kellanova): clean page background + crisp headline, with the
-   photo showcased in a rounded media card BELOW the CTAs. Perfect text
-   contrast in both themes by construction. Overrides earlier hero
-   blocks by cascade order. */
 
-.hero {
-  min-height: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  padding: clamp(140px, 16vh, 190px) 20px 0;
-  overflow: hidden;
-}
-
-/* No scrim, no fog band — the photo no longer sits behind the text */
-.hero::after { display: none; }
-
-/* Soft brand aurora stays, but quiet, and clipped by the section no more */
-.hero::before {
-  inset: -10% -10% 0;
-  opacity: .5;
-  filter: blur(60px);
-  animation: none;
-}
-[data-theme="dark"] .hero::before { opacity: .35; }
-
-/* Headline back to clean theme-native colors — no shadows needed on a
-   plain background. (Dark mode's scoped rules still win in dark.) */
-.hero-title .word {
-  background: linear-gradient(180deg, var(--text-primary), var(--green-700));
-  -webkit-background-clip: text; background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: none;
-}
-.hero-title .highlight {
-  background: linear-gradient(120deg, var(--gold-deep), #E3B341 55%, var(--gold-deep));
-  -webkit-background-clip: text; background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: none;
-}
-[data-theme="dark"] .hero-title .word {
-  background: linear-gradient(180deg, #FFFFFF, #C8E6D0);
-  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
-  text-shadow: none;
-}
-[data-theme="dark"] .hero-title .highlight {
-  background: linear-gradient(120deg, #FFD84D, #FFE97A 45%, #FFC107);
-  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
-  text-shadow: none;
-}
-.hero-subtitle { color: var(--text-secondary); text-shadow: none; }
-.hero-tagline  { color: var(--text-primary); text-shadow: none; }
-[data-theme="dark"] .hero-subtitle { color: #B8D4C4; text-shadow: none; }
-[data-theme="dark"] .hero-tagline  { color: #FFFFFF; text-shadow: none; }
-
-/* The media card */
-.hero-media {
-  position: relative;
-  z-index: 2;
-  width: min(1080px, 100%);
-  margin: clamp(48px, 7vh, 72px) auto 0;
-  border-radius: 24px;
-  overflow: hidden;
-  border: 1px solid rgba(20, 83, 43, .14);
-  box-shadow:
-    0 30px 80px rgba(16, 30, 22, .18),
-    0 8px 24px rgba(16, 30, 22, .10);
-  animation: hero-media-in 1s cubic-bezier(.16,1,.3,1) .55s both;
-}
-[data-theme="dark"] .hero-media {
-  border-color: rgba(120, 200, 150, .16);
-  box-shadow:
-    0 30px 80px rgba(0, 0, 0, .55),
-    0 0 60px rgba(52, 199, 123, .08);
-}
-.hero-media img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-/* Glow ring behind the card */
-.hero-media::before {
-  content: '';
-  position: absolute;
-  inset: -1px;
-  border-radius: inherit;
-  pointer-events: none;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .25);
-}
-@keyframes hero-media-in {
-  from { opacity: 0; transform: translateY(44px) scale(.98); }
-  to   { opacity: 1; transform: translateY(0) scale(1); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .hero-media { animation: none; }
-}
-@media (max-width: 640px) {
-  .hero { padding-top: 120px; }
-  .hero-media { border-radius: 16px; margin-top: 40px; }
-}
