@@ -90,27 +90,7 @@
 
   if (reduceMotion) return; // skip motion-heavy effects
 
-  /* ── 2. Hero mouse parallax ── */
-  const hero = document.querySelector('.hero');
-  const heroContent = document.querySelector('.hero-content');
-  if (hero && heroContent) {
-    let heroTicking = false;
-    let heroX = 0, heroY = 0;
-    hero.addEventListener('mousemove', function (e) {
-      if (heroTicking) return;
-      heroTicking = true;
-      const rect = hero.getBoundingClientRect();
-      heroX = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
-      heroY = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
-      requestAnimationFrame(function () {
-        heroContent.style.transform = 'translate(' + (heroX * -14).toFixed(2) + 'px, ' + (heroY * -10).toFixed(2) + 'px)';
-        heroTicking = false;
-      });
-    });
-    hero.addEventListener('mouseleave', function () {
-      heroContent.style.transform = 'translate(0px, 0px)';
-    });
-  }
+  /* ── 2. Hero mouse parallax — DISABLED (flickering on text hover) ── */
 
   /* ── 3. 3D card tilt on hover ── */
   document.querySelectorAll('.vision-card, .portfolio-card, .segment-card, .pillar-card, .region-card, .stat-card-light, .contact-card').forEach(function (card) {
