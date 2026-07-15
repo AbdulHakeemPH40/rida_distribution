@@ -2082,10 +2082,8 @@ p {
 
 /* ─── GLOBAL SOURCING GLOBE SECTION ─── */
 .sourcing-globe-layout {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: var(--space-xl);
-  align-items: center;
+  display: flex;
+  justify-content: center;
   margin-top: var(--space-lg);
 }
 .globe-wrapper {
@@ -2155,9 +2153,11 @@ p {
 }
 /* Country sourcing cards */
 .countries-list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-md);
+  max-width: 760px;
+  margin: 0 auto;
 }
 
 .country-card {
@@ -2228,7 +2228,7 @@ p {
 .country-card:hover {
   background: rgba(61, 212, 137, 0.08);
   border-color: var(--green-primary);
-  transform: translateX(8px);
+  transform: translateY(-4px);
 }
 
 .country-card:hover::before {
@@ -2286,13 +2286,15 @@ p {
 }
 
 /* Responsive: stack */
-@media (max-width: 767px) {
-  .sourcing-globe-layout {
-    grid-template-columns: 1fr;
-    gap: var(--space-lg);
+@media (max-width: 1023px) {
+  .countries-list {
+    grid-template-columns: repeat(2, 1fr);
   }
-  .globe-wrapper {
-    max-width: 320px;
+}
+@media (max-width: 767px) {
+  .countries-list {
+    grid-template-columns: 1fr;
+    max-width: 100%;
   }
 }
 

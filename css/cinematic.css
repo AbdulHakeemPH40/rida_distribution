@@ -1722,8 +1722,6 @@ html, body { overflow-x: hidden; overflow-x: clip; }
 
 /* Tablets: keep two-column grids from cramping */
 @media (max-width: 992px) {
-  .sourcing-globe-layout { grid-template-columns: 1fr; }
-  .globe-wrapper { max-width: 560px; }
   .coverage-content { grid-template-columns: 1fr; }
   .about-grid { grid-template-columns: 1fr; }
   .about-photo { max-width: 560px; margin: 0 auto; }
