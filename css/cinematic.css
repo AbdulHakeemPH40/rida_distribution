@@ -1808,3 +1808,39 @@ html, body { overflow-x: hidden; overflow-x: clip; }
   height: 60%;
   color: var(--gold-bright);
 }
+
+/* ─── HERO TEXT: photo-safe treatment (fixes light-mode legibility) ───
+   The hero always shows a background photo now, in both themes. Text
+   color can't follow the site's normal light/dark convention here —
+   dark text (correct for a plain light page) is unreadable against a
+   bright, busy photo. These are unscoped (no [data-theme="dark"]), so
+   by specificity they only affect LIGHT mode — the existing
+   [data-theme="dark"] rules elsewhere are more specific and keep
+   winning in dark mode, which already looked right. */
+.hero-photo {
+  opacity: .5;
+  filter: brightness(.8) saturate(1.05);
+}
+.hero::after {
+  background:
+    radial-gradient(120% 90% at 50% 0%, transparent 20%, var(--bg-primary) 100%),
+    linear-gradient(180deg, rgba(0,0,0,.45) 0%, rgba(0,0,0,.6) 45%, rgba(0,0,0,.8) 100%);
+}
+.hero-label {
+  background: rgba(8,18,13,.55);
+  border-color: rgba(255,255,255,.22);
+  color: #EAF3EC;
+  box-shadow: 0 4px 20px rgba(0,0,0,.25);
+}
+.hero-title .word {
+  background: linear-gradient(180deg, #FFFFFF, #D7E9DD);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 24px rgba(0,0,0,.45), 0 0 50px rgba(0,0,0,.3);
+}
+.hero-title .highlight {
+  background: linear-gradient(120deg, #FFD84D, #FFE97A 45%, #FFC107);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 24px rgba(0,0,0,.5), 0 0 40px rgba(0,0,0,.35);
+}
+.hero-subtitle { color: #EAF3EC; text-shadow: 0 2px 14px rgba(0,0,0,.5); }
+.hero-tagline  { color: #FFFFFF; text-shadow: 0 2px 16px rgba(0,0,0,.5); }
