@@ -90,10 +90,51 @@
 
   if (reduceMotion) return; // skip motion-heavy effects
 
-  /* ── 2. Hero interaction ── */
-  // Keep the hero stable: no mouse parallax, magnetic buttons, or hover dancing.
-  // The CTA hover state is handled by CSS with a restrained color/shadow change.
+  /* ── 2. Hero mouse parallax ── */
+  const hero = document.querySelector('.hero');
+  const heroContent = document.querySelector('.hero-content');
+  if (hero && heroContent) {
+    let heroTicking = false;
+    let heroX = 0, heroY = 0;
+    hero.addEventListener('mousemove', function (e) {
+      if (heroTicking) return;
+      heroTicking = true;
+      const rect = hero.getBoundingClientRect();
+      heroX = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
+      heroY = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+      requestAnimationFrame(function () {
+        heroContent.style.transform = 'translate(' + (heroX * -14).toFixed(2) + 'px, ' + (heroY * -10).toFixed(2) + 'px)';
+        heroTicking = false;
+      });
+    });
+    hero.addEventListener('mouseleave', function () {
+      heroContent.style.transform = 'translate(0px, 0px)';
+    });
+  }
 
-  /* Hover movement is intentionally disabled. Transforming an element while the
-     pointer is over it can repeatedly change hit-testing and cause visible flicker. */
+  /* ── 3. 3D card tilt on hover ── */
+  document.querySelectorAll('.vision-card, .portfolio-card, .segment-card, .pillar-card, .region-card, .stat-card-light, .contact-card').forEach(function (card) {
+    card.addEventListener('mousemove', function (e) {
+      const rect = card.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      card.style.transform = 'perspective(800px) rotateY(' + (x * 8).toFixed(2) + 'deg) rotateX(' + (y * -6).toFixed(2) + 'deg) translateY(-8px) scale(1.02)';
+    });
+    card.addEventListener('mouseleave', function () {
+      card.style.transform = '';
+    });
+  });
+
+  /* ── 4. Magnetic CTA buttons ── */
+  document.querySelectorAll('.hero-ctas .btn, .btn-primary, .btn-accent').forEach(function (btn) {
+    btn.addEventListener('mousemove', function (e) {
+      const rect = btn.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      btn.style.transform = 'translate(' + (x * 8).toFixed(2) + 'px, ' + (y * 6).toFixed(2) + 'px) translateY(-4px) scale(1.04)';
+    });
+    btn.addEventListener('mouseleave', function () {
+      btn.style.transform = '';
+    });
+  });
 })();

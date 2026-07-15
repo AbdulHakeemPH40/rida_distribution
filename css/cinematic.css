@@ -336,15 +336,19 @@ h2 { font-weight: 700; font-size: clamp(2rem, 4vw, 3.4rem); }
 .scroll-indicator { color: var(--text-tertiary); z-index: 2; }
 .scroll-indicator svg { stroke: var(--gold-primary); }
 
-/* ─── 7. CARDS — stable hover states ─── */
-/* Keep hover feedback paint-only: moving a hovered element changes hit-testing and
-   can create a continuous enter/leave flicker loop. */
+/* ─── 7. CARDS — cinematic spring hover (GPU-optimized) ─── */
 .card, .pillar-card, .portfolio-card, .segment-card, .contact-card,
-.region-card, .stat-card-light, .vision-card,
+.region-card, .stat-card-light, .vision-card {
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              box-shadow 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              border-color 0.35s ease,
+              background-color 0.35s ease;
+  will-change: transform;
+  backface-visibility: hidden;
+}
 .card:hover, .pillar-card:hover, .portfolio-card:hover, .segment-card:hover,
 .contact-card:hover, .region-card:hover, .stat-card-light:hover, .vision-card:hover {
-  transform: none !important;
-  transition: background-color .2s ease, box-shadow .2s ease, border-color .2s ease, color .2s ease;
+  transform: translateY(-8px) scale(1.02);
 }
 
 /* ─── 7. CARDS — glass + spring depth ─── */
@@ -369,22 +373,23 @@ h2 { font-weight: 700; font-size: clamp(2rem, 4vw, 3.4rem); }
 .card:hover,
 .pillar-card:hover, .portfolio-card:hover, .segment-card:hover,
 .contact-card:hover, .region-card:hover, .stat-card-light:hover {
-  transform: none !important;
-  box-shadow: var(--shadow-lg);
-  border-color: rgba(245,197,66,.5);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 48px rgba(31,122,77,.18), 0 0 0 1px rgba(245,197,66,.25);
+  border-color: rgba(245,197,66,.6);
 }
 
-/* Sheen sweep on hover */
+/* Sheen sweep on hover — sweeps left→right across card */
 .portfolio-card::before, .segment-card::before, .pillar-card::before {
   content: '';
-  position: absolute; top: 0; left: -120%;
+  position: absolute; top: 0; left: -150%;
   width: 80%; height: 100%;
-  background: linear-gradient(100deg, transparent, rgba(255,255,255,.35), transparent);
-  transform: skewX(-18deg);
-  transition: left .8s var(--ease-out-expo);
+  background: linear-gradient(105deg, transparent 0%, rgba(255,255,255,.25) 40%, rgba(255,255,255,.45) 50%, rgba(255,255,255,.25) 60%, transparent 100%);
+  transform: skewX(-20deg);
+  transition: left 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   pointer-events: none;
+  z-index: 2;
 }
-.portfolio-card:hover::before, .segment-card:hover::before, .pillar-card:hover::before { left: -120%; }
+.portfolio-card:hover::before, .segment-card:hover::before, .pillar-card:hover::before { left: 150%; }
 [data-theme="dark"] .portfolio-card::before,
 [data-theme="dark"] .segment-card::before,
 [data-theme="dark"] .pillar-card::before {
@@ -392,12 +397,12 @@ h2 { font-weight: 700; font-size: clamp(2rem, 4vw, 3.4rem); }
 }
 
 .pillar-icon, .portfolio-icon, .segment-icon, .contact-card-icon, .stat-icon, .region-emoji {
-  transition: background-color .2s ease, color .2s ease, box-shadow .2s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 .card:hover .pillar-icon, .portfolio-card:hover .portfolio-icon,
 .segment-card:hover .segment-icon, .contact-card:hover .contact-card-icon,
 .stat-card-light:hover .stat-icon {
-  transform: none !important;
+  transform: scale(1.08);
 }
 
 .pillar-title, .portfolio-title, .segment-name, .region-name, .contact-card-value {
@@ -1362,6 +1367,31 @@ h2 { font-weight: 700; font-size: clamp(2rem, 4vw, 3.4rem); }
 body, [data-theme="dark"] body { background: var(--bg-primary); }
 /* body::after grain is defined earlier — keep it active for cinematic depth */
 
+/* ─── Scroll-driven reveal (CSS view-timeline) ─── */
+/* Graceful fallback: if view-timeline is unsupported, elements remain visible
+   (opacity: 1 from the GSAP reveal classes that already ran). */
+@supports (animation-timeline: view()) {
+  .section {
+    animation: section-enter linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 35%;
+  }
+  @keyframes section-enter {
+    from { opacity: 0.7; transform: translateY(24px); }
+    to   { opacity: 1;   transform: translateY(0); }
+  }
+  .card, .pillar-card, .portfolio-card, .segment-card, .contact-card,
+  .region-card, .stat-card-light, .vision-card {
+    animation: card-enter linear both;
+    animation-timeline: view();
+    animation-range: entry 5% entry 30%;
+  }
+  @keyframes card-enter {
+    from { opacity: 0; transform: translateY(40px) scale(0.96); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+  }
+}
+
 /* Typography: large, calm, corporate */
 h1 { font-weight: 700; letter-spacing: -0.035em; }
 h2 { font-weight: 700; letter-spacing: -0.03em; }
@@ -1377,14 +1407,13 @@ h2 { font-weight: 700; letter-spacing: -0.03em; }
   color: var(--green-500);
 }
 
-/* Hero: richer brand glow for light mode */
+/* Hero: richer brand glow */
 .hero::before {
   background:
     radial-gradient(700px 520px at 75% 20%, rgba(31,122,77,.22), transparent 58%),
     radial-gradient(580px 460px at 18% 78%, rgba(212,160,23,.18), transparent 56%),
     radial-gradient(500px 400px at 50% 50%, rgba(31,122,77,.10), transparent 70%);
   filter: blur(2px);
-  animation: none;
   opacity: 1;
 }
 [data-theme="dark"] .hero::before {
@@ -1405,19 +1434,7 @@ h2 { font-weight: 700; letter-spacing: -0.03em; }
 [data-theme="dark"] .hero-title .word { color: #EAF3EC; }
 [data-theme="dark"] .hero-title .highlight { color: var(--green-500); }
 
-/* Cards: white, hairline border, quiet hover — no sheen sweep */
-.card, .pillar-card, .portfolio-card, .segment-card, .contact-card,
-.region-card, .stat-card-light, .supplier-card {
-  border: 1px solid #E7ECE7;
-  box-shadow: var(--shadow-sm);
-}
-.card:hover, .pillar-card:hover, .portfolio-card:hover, .segment-card:hover,
-.contact-card:hover, .region-card:hover, .stat-card-light:hover, .supplier-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-md);
-  border-color: rgba(22,101,52,.30);
-}
-.portfolio-card::before, .segment-card::before, .pillar-card::before { display: none; }
+/* Cards: cinematic depth with animated sheen sweep */
 
 /* Buttons: solid brand green primary; gold kept for flagship CTA only */
 .btn-primary {
@@ -1440,58 +1457,77 @@ h2 { font-weight: 700; letter-spacing: -0.03em; }
 }
 /* (dark-mode navbar overridden below — always stays light) */
 
-/* Icon chips: flat brand tint, no gold blend, no inner glow */
+/* Icon chips: cinematic gold-green glow */
 .pillar-icon, .portfolio-icon, .segment-icon, .region-emoji,
 .stat-card-light .stat-icon, .contact-card-icon {
-  background: var(--bg-green-light);
-  border-color: rgba(22,101,52,.14);
-  box-shadow: none;
+  background: linear-gradient(135deg, rgba(46,139,87,.12), rgba(245,197,66,.08));
+  border-color: rgba(245,197,66,.25);
+  box-shadow: 0 2px 12px rgba(46,139,87,.10), inset 0 1px 0 rgba(255,255,255,.5);
   border-radius: 16px;
 }
 .segment-card .segment-icon { box-shadow: 0 0 0 4px var(--bg-card); }
 
-/* Numbers & progress: single brand color, no gradient text / glow */
-.stat-number { color: var(--green-primary); }
-.advantage-number {
-  background: none;
-  -webkit-text-fill-color: currentColor;
-  color: var(--green-primary);
-  opacity: .85;
+/* Numbers & progress: cinematic gold-green gradient with soft glow */
+.stat-number {
+  background: linear-gradient(135deg, var(--green-500), var(--gold-primary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 6px rgba(245,197,66,.25));
 }
-.scroll-progress { background: var(--green-primary); box-shadow: none; }
+.advantage-number {
+  background: linear-gradient(135deg, var(--gold-primary), var(--green-500));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 1;
+}
+.scroll-progress { background: linear-gradient(90deg, var(--green-primary), var(--gold-primary)); box-shadow: 0 0 12px rgba(245,197,66,.3); }
 
 /* Trust bar: hairlines to match */
 .trust-bar { border-top-color: rgba(16,30,22,.07); border-bottom-color: rgba(16,30,22,.07); }
 
 /* Stable hero interaction: keep the composition still on hover. */
+/* Hero: restored aurora animation + GSAP parallax + button lift */
 .hero::before {
-  transform: none;
-  transition: none;
+  /* aurora-drift restored — animated by @keyframes in style.css */
+  animation: aurora-drift 8s ease-in-out infinite alternate;
 }
 .hero-content {
-  transform: none !important;
+  /* Allow GSAP parallax in main.js to control transform freely */
   transition: none !important;
 }
-.hero-ctas .btn,
+.hero-ctas .btn {
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              background-color 0.3s ease, color 0.3s ease,
+              box-shadow 0.3s ease, border-color 0.3s ease;
+}
 .hero-ctas .btn:hover,
 .hero-ctas .btn:focus-visible {
-  transform: none;
-  transition: background-color .2s ease, color .2s ease, box-shadow .2s ease, border-color .2s ease;
+  transform: translateY(-4px) scale(1.04);
 }
 .hero-ctas .btn-primary:hover,
 .hero-ctas .btn-primary:focus-visible {
   background: var(--green-700);
-  box-shadow: 0 8px 22px rgba(31, 122, 77, .24);
+  box-shadow: 0 12px 32px rgba(31, 122, 77, .32);
 }
 .hero-ctas .btn-accent:hover,
 .hero-ctas .btn-accent:focus-visible {
-  box-shadow: 0 8px 22px rgba(212, 160, 23, .28);
+  box-shadow: 0 12px 32px rgba(212, 160, 23, .36);
 }
 [data-theme="dark"] .hero-ctas .btn-primary {
   box-shadow: 0 6px 24px rgba(52,199,123,.35);
 }
+[data-theme="dark"] .hero-ctas .btn-primary:hover,
+[data-theme="dark"] .hero-ctas .btn-primary:focus-visible {
+  box-shadow: 0 12px 36px rgba(52,199,123,.45);
+}
 [data-theme="dark"] .hero-ctas .btn-accent {
   box-shadow: 0 6px 24px rgba(255,216,77,.30);
+}
+[data-theme="dark"] .hero-ctas .btn-accent:hover,
+[data-theme="dark"] .hero-ctas .btn-accent:focus-visible {
+  box-shadow: 0 12px 36px rgba(255,216,77,.40);
 }
 
 /* Hero background photo (aerial logistics hub) — sits under the glow layers.
