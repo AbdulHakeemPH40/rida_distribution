@@ -2035,3 +2035,45 @@ html, body { overflow-x: hidden; overflow-x: clip; }
   box-shadow: 0 0 0 4px var(--bg-card), 0 6px 18px rgba(16, 30, 22, .18);
 }
 .segment-card .segment-icon svg { width: 24px; height: 24px; }
+
+/* ─── SOURCING: map + countries side by side on desktop ───
+   ≥992px: map left, compact 2-column country list right.
+   Below that, source order stacks them: map first, names below. */
+@media (min-width: 992px) {
+  .sourcing-globe-layout {
+    display: grid;
+    grid-template-columns: 1.15fr .85fr;
+    gap: var(--space-lg);
+    align-items: center;
+  }
+  .sourcing-globe-layout .globe-wrapper {
+    max-width: none;
+    margin: 0;
+  }
+  .sourcing-globe-layout .countries-list {
+    grid-template-columns: 1fr 1fr;
+    max-width: none;
+    gap: 10px;
+    margin: 0;
+  }
+  .sourcing-globe-layout .country-card {
+    padding: 10px 14px;
+    gap: 10px;
+  }
+  .sourcing-globe-layout .country-flag {
+    width: 34px;
+    height: 34px;
+  }
+  .sourcing-globe-layout .country-name { font-size: .95rem; }
+  .sourcing-globe-layout .country-index { font-size: .72rem; }
+  .sourcing-globe-layout .country-arrow { display: none; }
+}
+/* Below desktop: stack — map first, country names below (base rule is
+   display:flex ROW, which squished both into skinny columns on phones) */
+@media (max-width: 991px) {
+  .sourcing-globe-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+}
