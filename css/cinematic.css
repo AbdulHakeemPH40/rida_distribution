@@ -223,11 +223,11 @@ h2 { font-weight: 700; font-size: clamp(2rem, 4vw, 3.4rem); }
   content: '';
   position: absolute; inset: -20%;
   background:
-    radial-gradient(600px 500px at 20% 25%, rgba(31,122,77,.55), transparent 60%),
-    radial-gradient(560px 480px at 82% 30%, rgba(245,197,66,.40), transparent 62%),
-    radial-gradient(700px 600px at 60% 90%, rgba(20,83,43,.45), transparent 60%);
+    radial-gradient(650px 540px at 20% 25%, rgba(31,122,77,.50), transparent 58%),
+    radial-gradient(600px 520px at 82% 30%, rgba(245,197,66,.35), transparent 60%),
+    radial-gradient(720px 620px at 60% 90%, rgba(20,83,43,.40), transparent 60%);
   filter: blur(30px);
-  opacity: .9;
+  opacity: .95;
   animation: aurora-drift 18s ease-in-out infinite alternate;
   transform: translate3d(var(--mx, 0), var(--my, 0), 0);
   transition: transform .6s var(--ease-out-expo);
@@ -238,8 +238,8 @@ h2 { font-weight: 700; font-size: clamp(2rem, 4vw, 3.4rem); }
   content: '';
   position: absolute; inset: 0;
   background:
-    radial-gradient(120% 90% at 50% 0%, transparent 40%, var(--bg-primary) 100%),
-    linear-gradient(180deg, rgba(0,0,0,.15) 0%, rgba(0,0,0,.35) 50%, rgba(0,0,0,.55) 100%);
+    radial-gradient(120% 90% at 50% 0%, transparent 50%, rgba(255,255,255,.35) 100%),
+    linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.08) 60%, rgba(255,255,255,.18) 100%);
   z-index: 1;
 }
 [data-theme="dark"] .hero::after {
@@ -257,16 +257,16 @@ h2 { font-weight: 700; font-size: clamp(2rem, 4vw, 3.4rem); }
 
 .hero-label {
   display: inline-flex; align-items: center; gap: 8px;
-  background: var(--glass-bg);
+  background: rgba(255,255,255,.72);
   -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
-  border: 1px solid var(--glass-border);
-  color: var(--text-primary);
+  border: 1px solid rgba(31,122,77,.18);
+  color: #14532B;
   padding: 9px 20px;
   border-radius: 999px;
   font-weight: 600; font-size: .82rem;
   letter-spacing: .04em;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 2px 16px rgba(31,122,77,.10);
 }
 .hero-label::before {
   content: ''; width: 8px; height: 8px; border-radius: 50%;
@@ -304,8 +304,8 @@ h2 { font-weight: 700; font-size: clamp(2rem, 4vw, 3.4rem); }
   text-shadow: 0 2px 20px rgba(0,0,0,.5), 0 0 50px rgba(245,197,66,.3);
 }
 
-.hero-subtitle { color: var(--text-secondary); font-size: 1.3rem; font-weight: 400; letter-spacing: .02em; text-shadow: 0 1px 8px rgba(0,0,0,.2); }
-.hero-tagline  { color: var(--text-primary); font-size: 1.5rem; font-weight: 600; margin-top: 6px; text-shadow: 0 2px 10px rgba(0,0,0,.25); }
+.hero-subtitle { color: #3D5648; font-size: 1.3rem; font-weight: 500; letter-spacing: .02em; text-shadow: 0 1px 4px rgba(255,255,255,.3); }
+.hero-tagline  { color: #1A3324; font-size: 1.5rem; font-weight: 600; margin-top: 6px; text-shadow: 0 2px 6px rgba(255,255,255,.35); }
 [data-theme="dark"] .hero-subtitle { color: #B8D4C4; text-shadow: 0 1px 12px rgba(0,0,0,.5); }
 [data-theme="dark"] .hero-tagline  { color: #FFFFFF; text-shadow: 0 2px 16px rgba(0,0,0,.5); }
 
@@ -1377,12 +1377,13 @@ h2 { font-weight: 700; letter-spacing: -0.03em; }
   color: var(--green-500);
 }
 
-/* Hero: single restrained brand glow, no animation, no blur cost */
+/* Hero: richer brand glow for light mode */
 .hero::before {
   background:
-    radial-gradient(640px 480px at 78% 18%, rgba(31,122,77,.13), transparent 62%),
-    radial-gradient(520px 420px at 15% 82%, rgba(212,160,23,.09), transparent 60%);
-  filter: none;
+    radial-gradient(700px 520px at 75% 20%, rgba(31,122,77,.22), transparent 58%),
+    radial-gradient(580px 460px at 18% 78%, rgba(212,160,23,.18), transparent 56%),
+    radial-gradient(500px 400px at 50% 50%, rgba(31,122,77,.10), transparent 70%);
+  filter: blur(2px);
   animation: none;
   opacity: 1;
 }
@@ -1392,14 +1393,14 @@ h2 { font-weight: 700; letter-spacing: -0.03em; }
     radial-gradient(520px 420px at 15% 82%, rgba(255,216,77,.07), transparent 60%);
 }
 .hero-title .word {
-  background: none;
-  -webkit-text-fill-color: currentColor;
-  color: var(--text-primary);
+  background: linear-gradient(180deg, #0A2E1A 0%, #14532B 55%, #1A6B3A 100%);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .hero-title .highlight {
-  background: none;
-  -webkit-text-fill-color: currentColor;
-  color: var(--green-primary);
+  background: linear-gradient(120deg, #C8941A, #E5B830 45%, #F5C542 100%);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 [data-theme="dark"] .hero-title .word { color: #EAF3EC; }
 [data-theme="dark"] .hero-title .highlight { color: var(--green-500); }
@@ -1508,9 +1509,9 @@ h2 { font-weight: 700; letter-spacing: -0.03em; }
   object-fit: cover;
   object-position: center bottom; /* facility at the bottom, calm sky behind the headline */
   z-index: 0;
-  opacity: .7;
+  opacity: .82;
   pointer-events: none;
-  filter: brightness(1.05) saturate(1.1);
+  filter: brightness(1.12) saturate(1.15);
 }
 [data-theme="dark"] .hero-photo { opacity: .45; filter: brightness(.7) saturate(.8); }
 /* keep the existing glow + fade layers and content above the photo */
