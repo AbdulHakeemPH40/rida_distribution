@@ -499,18 +499,8 @@ function animateCounters() {
 }
 
 function animateParallax() {
-  // Hero parallax
-  gsap.to('.hero-content', {
-    yPercent: 30,
-    opacity: 0.5,
-    ease: 'none',
-    scrollTrigger: {
-      trigger: '.hero',
-      start: 'top top',
-      end: 'bottom top',
-      scrub: true
-    }
-  });
+  // Hero parallax disabled — content stays fixed inside hero section.
+  // The movement + fade on scroll pushed text outside the hero boundary.
 }
 
 function animateTimelineScroll() {
