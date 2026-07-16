@@ -1603,13 +1603,13 @@ p {
 }
 
 .vm-vision {
-  background: linear-gradient(145deg, rgba(245,197,66,0.08) 0%, rgba(245,197,66,0.02) 100%);
-  border: 1px solid rgba(245,197,66,0.18);
+  background: linear-gradient(145deg, rgba(245,197,66,0.14) 0%, rgba(245,197,66,0.04) 100%);
+  border: 1px solid rgba(245,197,66,0.25);
 }
 
 .vm-mission {
-  background: linear-gradient(145deg, rgba(31,122,77,0.10) 0%, rgba(31,122,77,0.02) 100%);
-  border: 1px solid rgba(31,122,77,0.22);
+  background: linear-gradient(145deg, rgba(31,122,77,0.14) 0%, rgba(31,122,77,0.04) 100%);
+  border: 1px solid rgba(31,122,77,0.28);
 }
 
 [data-theme="dark"] .vm-vision {
@@ -1678,7 +1678,7 @@ p {
   font-size: clamp(1.1rem, 2vw, 1.35rem);
   font-weight: 700;
   line-height: 1.5;
-  color: var(--text-primary, #0E1F17);
+  color: #0E1F17;
   max-width: 520px;
 }
 
@@ -1714,7 +1714,7 @@ p {
   padding-left: 1.5rem;
   font-size: 0.95rem;
   line-height: 1.55;
-  color: var(--text-secondary, #4A6655);
+  color: #2A3A30;
 }
 
 [data-theme="dark"] .vm-points li {
