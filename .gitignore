@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+.venv/
+venv/
+
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Scraping logs / temp files
+scrape_log.txt
+scrape_err.txt
+
+# Cortex IDE local memory
+.cortex/
+
+# Large binary / temp (keep brand logos tracked)
+*.xlsx
+*.docx
+
+# Heavy source PNGs — run tools/optimize-images.py; the JPG is what ships
+assets/images/stock/*.png
