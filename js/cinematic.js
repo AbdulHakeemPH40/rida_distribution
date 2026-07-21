@@ -1,5 +1,5 @@
 /* ============================================================
-   RiDA — Cinematic Interactions Layer (ADDITIVE)
+   R i D A — Cinematic Interactions Layer (ADDITIVE)
    NOTE: reveal-on-scroll + hero entrance are handled by main.js
    (GSAP). This file only adds effects that main.js does NOT do:
    scroll progress · hero mouse-parallax · magnetic buttons ·

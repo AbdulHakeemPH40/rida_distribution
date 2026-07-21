@@ -1,5 +1,5 @@
 /* ============================================================
-   RiDA — CINEMATIC OVERRIDE STYLESHEET  (Apple-style)
+   R i D A — CINEMATIC OVERRIDE STYLESHEET  (Apple-style)
    Loaded AFTER style.css to elevate the look & feel.
    Palette: Deep Green · Gold · White · Cinematic Dark
    ============================================================ */
@@ -301,10 +301,17 @@ h2 { font-weight: 700; font-size: clamp(2rem, 4vw, 3.4rem); }
   box-shadow: var(--shadow-md);
   transition: box-shadow var(--transition-base), transform var(--transition-base);
 }
-.navbar.scrolled { background: transparent; box-shadow: none; }
+.navbar.scrolled {
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
 .navbar.scrolled .navbar-inner {
   box-shadow: var(--shadow-lg);
-  background: var(--glass-bg);
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 .navbar-logo { height: 40px; transition: transform var(--transition-base); }
 .navbar.scrolled .navbar-logo { height: 40px; }
@@ -1486,7 +1493,7 @@ h2 { font-weight: 700; font-size: clamp(2rem, 4vw, 3.4rem); }
 
 /* ═══════════ 16. INTERNATIONAL CORPORATE STANDARD (FMCG) ═══════════
    Reference class: Unilever / Kellanova / Danone corporate sites —
-   light-first, one strong brand color (RiDA green), gold reserved for
+   light-first, one strong brand color (R i D A green), gold reserved for
    flagship CTAs, photography-led, minimal decoration. This block loads
    last so it wins the cascade; delete it to restore the older look. */
 
@@ -1592,11 +1599,13 @@ h2 { font-weight: 700; letter-spacing: -0.03em; }
 .btn-accent { box-shadow: 0 6px 20px rgba(212,160,23,.25); }
 .btn-accent:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(212,160,23,.32); }
 
-/* Navbar: clean corporate bar */
+/* Navbar: clean corporate bar — frosted glass (light + dark) */
 .navbar-inner {
-  background: rgba(255,255,255,.86);
-  border: 1px solid rgba(16,30,22,.07);
-  box-shadow: 0 2px 12px rgba(16,30,22,.05);
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(16, 30, 22, 0.07);
+  box-shadow: 0 2px 12px rgba(16, 30, 22, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 /* (dark-mode navbar overridden below — always stays light) */
 
@@ -2021,15 +2030,22 @@ html, body { overflow-x: hidden; overflow-x: clip; }
 
 /* ─── Navbar: always light mode (never darkens) ─── */
 [data-theme="dark"] .navbar-inner {
-  background: rgba(255,255,255,.86) !important;
-  border-color: rgba(16,30,22,.07) !important;
-  box-shadow: 0 2px 12px rgba(16,30,22,.05) !important;
+  background: rgba(255, 255, 255, 0.72) !important;
+  border-color: rgba(16, 30, 22, 0.07) !important;
+  box-shadow: 0 2px 12px rgba(16, 30, 22, 0.05) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
 }
 [data-theme="dark"] .navbar.scrolled {
   background: transparent !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
   box-shadow: none !important;
+}
+[data-theme="dark"] .navbar.scrolled .navbar-inner {
+  background: rgba(255, 255, 255, 0.72) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
 }
 [data-theme="dark"] .navbar-links a,
 [data-theme="dark"] .navbar.scrolled .navbar-links a {
@@ -2075,7 +2091,7 @@ html, body { overflow-x: hidden; overflow-x: clip; }
 
    Fix: no theme variables and no partial opacity anywhere in the hero.
    Photo at opacity 1, darkened by filter; fixed deep-green scrim with a
-   radial spotlight that buries the photo's baked-in RIDA wordmark
+   radial spotlight that buries the photo's baked-in R i D A wordmark
    behind the headline; fixed text colors. The hero now renders
    pixel-identical in both themes — the dark look the owner approved. */
 

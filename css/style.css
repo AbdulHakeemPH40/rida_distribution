@@ -1,5 +1,5 @@
 ﻿/* ============================================================
-   RiDA Landing Page — Master Stylesheet
+   R i D A Landing Page — Master Stylesheet
    Version: 1.0 | Date: 2026-07-11
    ============================================================ */
 
@@ -449,7 +449,7 @@ p {
 }
 
 .navbar.scrolled {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.72);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   box-shadow: var(--shadow-sm);

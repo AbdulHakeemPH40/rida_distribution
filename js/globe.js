@@ -1,5 +1,5 @@
 /**
- * RiDA — Global Sourcing Map  (Self-Contained Edition)
+ * R i D A — Global Sourcing Map  (Self-Contained Edition)
  * ──────────────────────────────────────────────────────
  * Renders a flat world map with:
  *   • Embedded simplified continent SVG paths (NO external dependency needed)
@@ -439,6 +439,6 @@
   render();
   requestAnimationFrame(animate);
 
-  console.log('RiDA map: rendered successfully (self-contained mode)');
+  console.log('R i D A map: rendered successfully (self-contained mode)');
 
 })();

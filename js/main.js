@@ -1,5 +1,5 @@
 /* ============================================================
-   RiDA Landing Page — Main JavaScript
+   R i D A Landing Page — Main JavaScript
    Version: 1.0 | Date: 2026-07-11
    ============================================================ */
 
@@ -131,7 +131,7 @@ function initLanguageToggle() {
       const englishLogo = logo.getAttribute('data-logo-en') || 'assets/logos/logo_english.png';
       const arabicLogo = logo.getAttribute('data-logo-ar') || 'assets/logos/logo_2_arabic.png';
       logo.setAttribute('src', arabic ? arabicLogo : englishLogo);
-      logo.alt = arabic ? 'شعار ريدا' : 'RiDA Logo';
+      logo.alt = arabic ? 'شعار ريدا' : 'R i D A Logo';
     });
 
     // Update all text elements with data-en / data-ar
