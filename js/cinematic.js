@@ -90,31 +90,52 @@
 
   if (reduceMotion) return; // skip motion-heavy effects
 
+  /* Skip 3D tilt & magnetic on touch-only devices — they can't hover,
+     and mousemove emulation on touch is janky. */
+  var hasTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+  if (hasTouch) return;
+
   /* ── 2. Hero mouse parallax — DISABLED (flickering on text hover) ── */
 
-  /* ── 3. 3D card tilt on hover ── */
+  /* ── 3. 3D card tilt on hover (rAF-throttled, desktop only) ── */
   document.querySelectorAll('.vision-card, .portfolio-card, .segment-card, .pillar-card, .region-card, .stat-card-light, .contact-card').forEach(function (card) {
+    var tiltPending = false;
+    var lastTiltX = 0, lastTiltY = 0;
     card.addEventListener('mousemove', function (e) {
-      const rect = card.getBoundingClientRect();
-      const x = (e.clientX - rect.left) / rect.width - 0.5;
-      const y = (e.clientY - rect.top) / rect.height - 0.5;
-      card.style.transform = 'perspective(800px) rotateY(' + (x * 8).toFixed(2) + 'deg) rotateX(' + (y * -6).toFixed(2) + 'deg) translateY(-8px) scale(1.02)';
+      var rect = card.getBoundingClientRect();
+      lastTiltX = (e.clientX - rect.left) / rect.width - 0.5;
+      lastTiltY = (e.clientY - rect.top) / rect.height - 0.5;
+      if (tiltPending) return;
+      tiltPending = true;
+      requestAnimationFrame(function () {
+        card.style.transform = 'perspective(800px) rotateY(' + (lastTiltX * 8).toFixed(2) + 'deg) rotateX(' + (lastTiltY * -6).toFixed(2) + 'deg) translateY(-8px) scale(1.02)';
+        tiltPending = false;
+      });
     });
     card.addEventListener('mouseleave', function () {
       card.style.transform = '';
+      tiltPending = false;
     });
   });
 
-  /* ── 4. Magnetic CTA buttons ── */
+  /* ── 4. Magnetic CTA buttons (rAF-throttled, desktop only) ── */
   document.querySelectorAll('.hero-ctas .btn, .btn-primary, .btn-accent').forEach(function (btn) {
+    var magPending = false;
+    var lastMagX = 0, lastMagY = 0;
     btn.addEventListener('mousemove', function (e) {
-      const rect = btn.getBoundingClientRect();
-      const x = (e.clientX - rect.left) / rect.width - 0.5;
-      const y = (e.clientY - rect.top) / rect.height - 0.5;
-      btn.style.transform = 'translate(' + (x * 8).toFixed(2) + 'px, ' + (y * 6).toFixed(2) + 'px) translateY(-4px) scale(1.04)';
+      var rect = btn.getBoundingClientRect();
+      lastMagX = (e.clientX - rect.left) / rect.width - 0.5;
+      lastMagY = (e.clientY - rect.top) / rect.height - 0.5;
+      if (magPending) return;
+      magPending = true;
+      requestAnimationFrame(function () {
+        btn.style.transform = 'translate(' + (lastMagX * 8).toFixed(2) + 'px, ' + (lastMagY * 6).toFixed(2) + 'px) translateY(-4px) scale(1.04)';
+        magPending = false;
+      });
     });
     btn.addEventListener('mouseleave', function () {
       btn.style.transform = '';
+      magPending = false;
     });
   });
 })();

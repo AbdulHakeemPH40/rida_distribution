@@ -39,6 +39,7 @@
   var GREEN = '#3DD489';
   var activeCountry = null;
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var isMobile = window.innerWidth < 769;
 
   /* ── Embedded simplified world map (equirectangular SVG paths) ──
    * These are hand-simplified continent outlines in a 1000×500 viewBox
@@ -371,17 +372,23 @@
     var t = (now - t0) / 1000;
 
     if (!reduceMotion) {
-      /* Animate route dashes */
-      var dashOffset = -t * 25;
-      routePaths.forEach(function (r) {
-        var hot = activeCountry === r.name;
-        r.path.style.strokeDashoffset = dashOffset;
-        r.path.setAttribute('stroke', hot ? GOLD : 'rgba(245,197,66,0.45)');
-        r.path.setAttribute('stroke-width', hot ? '2.5' : '1.5');
-      });
+      /* On mobile, skip the most expensive per-frame writes: route dash
+         offsets & ring pulses (12-24 DOM writes/frame). Keep particles
+         (users look at the map) but halve their count for perf. */
+      if (!isMobile) {
+        /* Animate route dashes */
+        var dashOffset = -t * 25;
+        routePaths.forEach(function (r) {
+          var hot = activeCountry === r.name;
+          r.path.style.strokeDashoffset = dashOffset;
+          r.path.setAttribute('stroke', hot ? GOLD : 'rgba(245,197,66,0.45)');
+          r.path.setAttribute('stroke-width', hot ? '2.5' : '1.5');
+        });
+      }
 
-      /* Animate particles along routes */
-      routeParticles.forEach(function (p) {
+      /* Animate particles along routes (every 2nd on mobile) */
+      routeParticles.forEach(function (p, i) {
+        if (isMobile && i % 2 !== 0) return;
         var prog = ((t * 0.25) + p.offset) % 1;
         var idx = Math.floor(prog * (p.points.length - 1));
         var frac = prog * (p.points.length - 1) - idx;
@@ -396,20 +403,22 @@
         p.circle.setAttribute('opacity', hot ? '1' : '0.85');
       });
 
-      /* Hub pulse */
-      if (hubPulse) {
+      /* Hub pulse — skip on mobile */
+      if (!isMobile && hubPulse) {
         var pulse = Math.sin(t * 1.8) * 0.5 + 0.5;
         hubPulse.setAttribute('r', 25 + pulse * 12);
         hubPulse.setAttribute('opacity', 0.4 - pulse * 0.3);
       }
 
-      /* Spoke ring pulse */
-      var rings = markerLayer.querySelectorAll('.map-spoke-ring');
-      rings.forEach(function (ring, i) {
-        var p = Math.sin(t * 2 + i * 0.8) * 0.5 + 0.5;
-        ring.setAttribute('r', 10 + p * 5);
-        ring.setAttribute('opacity', 0.15 + p * 0.1);
-      });
+      /* Spoke ring pulse — skip on mobile */
+      if (!isMobile) {
+        var rings = markerLayer.querySelectorAll('.map-spoke-ring');
+        rings.forEach(function (ring, i) {
+          var p = Math.sin(t * 2 + i * 0.8) * 0.5 + 0.5;
+          ring.setAttribute('r', 10 + p * 5);
+          ring.setAttribute('opacity', 0.15 + p * 0.1);
+        });
+      }
     }
 
     requestAnimationFrame(animate);

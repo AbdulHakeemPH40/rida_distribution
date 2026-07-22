@@ -31,18 +31,24 @@ document.addEventListener('DOMContentLoaded', () => {
 function initNavbar() {
   const navbar = document.getElementById('navbar');
   let lastScroll = 0;
+  let ticking = false;
 
   window.addEventListener('scroll', () => {
-    const currentScroll = window.scrollY;
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      const currentScroll = window.scrollY;
 
-    if (currentScroll > 80) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
+      if (currentScroll > 80) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
 
-    lastScroll = currentScroll;
-  });
+      lastScroll = currentScroll;
+      ticking = false;
+    });
+  }, { passive: true });
 
   // Active link highlight
   const sections = document.querySelectorAll('section[id]');

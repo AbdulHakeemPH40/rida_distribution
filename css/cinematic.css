@@ -3117,3 +3117,191 @@ body.dark .brand-card:hover .brand-card-name {
   color: var(--gold-primary, #F5C542);
 }
 
+/* ==========================================================================
+   PERFORMANCE & PREMIUM SMOOTHNESS LAYER
+   Fixes mobile scroll glitches/freezing + delivers fluid $10k-site motion.
+   Color schema & copy untouched — purely rendering/animation optimization.
+   ========================================================================== */
+
+/* --- Global: GPU-friendly compositing hints on animated surfaces --- */
+.hero-photo,
+.brand-card,
+.card, .pillar-card, .portfolio-card, .segment-card,
+.contact-card, .region-card, .stat-card-light, .vision-card,
+.why-card, .supplier-card, .mv-card, .criteria-chip {
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* --- Butter-smooth reveal easing (cinematic overshoot, no bounce jank) --- */
+.reveal-up, .reveal-left, .reveal-right, .reveal-scale {
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+/* ==========================================================================
+   MOBILE / TOUCH PERFORMANCE  (max-width: 768px)
+   The #1 cause of scroll glitch = film grain repaint + stacked backdrop
+   blur + always-on infinite particles. Disable/neutralize on small screens.
+   ========================================================================== */
+@media (max-width: 768px) {
+
+  /* 1. Kill the fixed full-screen film grain — biggest repaint cost on scroll */
+  body::after {
+    display: none !important;
+    content: none !important;
+  }
+
+  /* 2. Replace expensive backdrop blurs with solid/translucent backgrounds */
+  .navbar, .navbar.scrolled, .mobile-drawer, .glass, .card-glass,
+  .trust-bar, .brand-card, .criteria-chip, .contact-card,
+  [class*="glass"], [class*="blur"] {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+
+  /* 3. Disable heavy scroll-driven animations (animation-timeline) on mobile —
+        they recalc every frame during scroll on low-power GPUs */
+  .section, .card, .pillar-card, .portfolio-card, .segment-card,
+  .contact-card, .region-card, .stat-card-light, .vision-card {
+    animation: none !important;
+  }
+
+  /* 4. Stop infinite decorative loops that fight the scroll thread */
+  .route-particle, .hub-particle, .particle, .dot,
+  .uae-ping, .hubPulse, [class*="particle"] {
+    animation: none !important;
+    display: none !important;
+  }
+
+  /* 5. Aurora / drifting gradient backgrounds — static on mobile */
+  .aurora, .hero-bg, [class*="aurora"] {
+    animation: none !important;
+  }
+
+  /* 6. Remove will-change on mobile (it pins GPU memory; hurts low-RAM devices) */
+  .hero-photo, .brand-card, .card, .pillar-card, .portfolio-card,
+  .segment-card, .contact-card, .region-card, .stat-card-light, .vision-card,
+  .why-card, .supplier-card, .mv-card, .criteria-chip {
+    will-change: auto;
+  }
+
+  /* 7. Faster, snappier reveals on mobile (less travel = less jank) */
+  .reveal-up, .reveal-left, .reveal-right, .reveal-scale {
+    transition-duration: 0.45s !important;
+  }
+}
+
+/* --- Scoped transitions: GPU-composited properties only (transform/opacity) --- */
+.why-card, .pillar-card, .supplier-card, .brand-card {
+  transition-property: transform, opacity, border-color, box-shadow;
+}
+
+/* --- Spring-lift hover physics on interactive cards (desktop) --- */
+@media (min-width: 769px) {
+  .brand-card:hover, .pillar-card:hover, .supplier-card:hover, .why-card:hover {
+    transform: translateY(-6px) scale(1.015);
+    transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .brand-card:active, .pillar-card:active, .supplier-card:active, .why-card:active {
+    transform: translateY(-2px) scale(0.99);
+  }
+}
+
+/* ==========================================================================
+   REDUCED MOTION — respect user preference (accessibility + perf)
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  body::after { display: none !important; }
+}
+
+/* ==========================================================================
+   SMOOTH SCROLL — premium inertia feel (desktop, non-reduced-motion)
+   ========================================================================== */
+@media (min-width: 769px) and (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+/* ==========================================================================
+   DEEP PERFORMANCE — content-visibility + contain + scoped transitions
+   ========================================================================== */
+
+/* --- Skip rendering for off-screen sections (biggest single perf gain) --- */
+section:not(#hero):not(#navbar-placeholder) {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 600px;
+}
+
+/* --- Paint containment on cards: the browser won't repaint the whole
+       page when one card's hover state changes --- */
+.brand-card, .pillar-card, .portfolio-card, .segment-card,
+.why-card, .supplier-card, .vision-card, .mv-card,
+.contact-card, .region-card, .stat-card-light, .criteria-chip,
+.country-card, .timeline-node, .framework-detail {
+  contain: layout style paint;
+}
+
+/* --- Force interactive elements to only animate compositor-safe
+       properties. Transitioning "all" makes the browser check every
+       CSS property on every frame — this is the #2 cause of scroll jank
+       after backdrop-filter. --- */
+.card, .pillar-card, .portfolio-card, .segment-card,
+.why-card, .supplier-card, .brand-card, .contact-card,
+.region-card, .stat-card-light, .vision-card, .mv-card,
+.criteria-chip, .btn, .nav-link, .navbar-links a,
+.timeline-node, .framework-detail, .country-card,
+.brand-card-logo, input, textarea, select,
+.language-toggle, .theme-toggle, .hamburger {
+  transition-property: transform, opacity, border-color, box-shadow, background-color, color, filter !important;
+}
+
+/* --- Hero performance: the big blur filter on ::before is extremely
+       expensive. Reduce it, and mark the hero as paint-contained
+       so blur repaints don't cascade down the page. --- */
+.hero {
+  contain: layout style paint;
+}
+.hero::before {
+  filter: blur(18px);           /* was 30px — 40% cheaper to render */
+}
+[data-theme="dark"] .hero::before {
+  filter: blur(20px);           /* was 35px — 43% cheaper */
+}
+
+/* --- Reduce large blur on hero shimmer --- */
+.hero-shimmer {
+  filter: blur(12px);           /* was 30px */
+}
+
+/* --- Mobile: further reduce hero blur, drop contain on tiny cards --- */
+@media (max-width: 768px) {
+  .hero::before {
+    filter: blur(8px);           /* phone GPUs can barely do 8px blur */
+  }
+  [data-theme="dark"] .hero::before {
+    filter: blur(10px);
+  }
+  section:not(#hero):not(#navbar-placeholder) {
+    content-visibility: visible;  /* mobile viewports are short — visible is fine */
+    contain-intrinsic-size: auto 400px;
+  }
+}
+
+/* ==========================================================================
+   FONT RENDERING — sharper text, no subpixel jitter during animations
+   ========================================================================== */
+html {
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+h1, h2, h3, h4, h5, h6, .section-title, .section-label, .hero-title {
+  text-rendering: optimizeLegibility;
+}
