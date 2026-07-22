@@ -2820,3 +2820,156 @@ a.contact-card:focus-visible {
   white-space: nowrap !important;
   border: 0 !important;
 }
+
+/* ===== Brand Partners cards (#brands) ===== */
+#brands,
+.brands-section {
+  background: var(--bg);
+}
+
+.brands-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(12px, 1.5vw, 20px);
+  align-items: stretch;
+}
+
+.brand-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px 14px 16px;
+  background: var(--white, #fff);
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  min-width: 0;
+}
+
+.brand-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(10, 32, 20, 0.12);
+  border-color: rgba(31, 122, 77, 0.22);
+}
+
+.brand-card-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 88px;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  background: #f4f7f5;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.brand-card-logo img {
+  max-width: 100%;
+  max-height: 64px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(1) contrast(1.05);
+  opacity: 0.88;
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.brand-card-logo svg {
+  max-width: 100%;
+  max-height: 64px;
+  width: auto;
+  height: auto;
+  display: block;
+}
+
+.brand-card:hover .brand-card-logo img {
+  filter: grayscale(0.35) contrast(1.05);
+  opacity: 1;
+}
+
+.brand-card-name {
+  margin: 0;
+  font-family: var(--font-display, inherit);
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--text, #0a2014);
+  line-height: 1.3;
+}
+
+[data-theme="dark"] .brand-card,
+html.dark .brand-card,
+body.dark .brand-card {
+  background: var(--bg-card, #0f2419);
+  border-color: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+}
+
+[data-theme="dark"] .brand-card-logo,
+html.dark .brand-card-logo,
+body.dark .brand-card-logo {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+[data-theme="dark"] .brand-card-name,
+html.dark .brand-card-name,
+body.dark .brand-card-name {
+  color: var(--text, #e8f0ea);
+}
+
+[data-theme="dark"] .brand-card-logo img,
+html.dark .brand-card-logo img,
+body.dark .brand-card-logo img {
+  filter: grayscale(1) brightness(1.15) contrast(1.05);
+  opacity: 0.9;
+}
+
+[data-theme="dark"] .brand-card:hover .brand-card-logo img,
+html.dark .brand-card:hover .brand-card-logo img,
+body.dark .brand-card:hover .brand-card-logo img {
+  filter: grayscale(0.25) brightness(1.2) contrast(1.05);
+  opacity: 1;
+}
+
+@media (max-width: 991px) {
+  .brands-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .brands-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .brand-card {
+    padding: 16px 10px 14px;
+  }
+
+  .brand-card-logo {
+    height: 72px;
+    padding: 10px 12px;
+  }
+
+  .brand-card-logo img {
+    max-height: 52px;
+  }
+
+  .brand-card-name {
+    font-size: 0.82rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .brands-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+}
+

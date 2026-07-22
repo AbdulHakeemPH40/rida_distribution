@@ -434,7 +434,7 @@ function animateRevealElements() {
   // Staggered cards — each card eases in slightly after the last, like
   // Apple's product-grid reveals, instead of popping in together.
   gsap.utils.toArray('.stagger-cards').forEach(container => {
-    const cards = container.querySelectorAll('.card, .portfolio-card, .segment-card, .region-card, .stat-card-light, .vision-card, .contact-card');
+    const cards = container.querySelectorAll('.card, .portfolio-card, .segment-card, .region-card, .stat-card-light, .vision-card, .contact-card, .brand-card');
     if (cards.length > 0) {
       gsap.fromTo(cards,
         { y: 70, opacity: 0, scale: .96 },
@@ -606,7 +606,9 @@ function initBrandFilter() {
   });
 }
 
-// Init brand filter on DOM ready
+// Init brand filter ONLY if filter buttons exist
 document.addEventListener('DOMContentLoaded', () => {
-  initBrandFilter();
+  if (document.querySelectorAll('.brand-filter-btn').length) {
+    initBrandFilter();
+  }
 });

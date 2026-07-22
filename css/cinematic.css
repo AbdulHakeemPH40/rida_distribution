@@ -3000,3 +3000,120 @@ html:not([data-theme="dark"]) #segments .segment-desc {
   filter: grayscale(0.35) contrast(1) brightness(1.1);
   opacity: 1;
 }
+
+/* ===== Brand Partners — cinematic polish ===== */
+.brands-section .section-header {
+  margin-bottom: 2rem;
+}
+
+.brand-card {
+  backdrop-filter: blur(6px);
+}
+
+.brand-card:hover {
+  border-color: rgba(245, 197, 66, 0.35);
+}
+
+[data-theme="dark"] .brand-card,
+html.dark .brand-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: none;
+}
+
+[data-theme="dark"] .brand-card:hover,
+html.dark .brand-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(245, 197, 66, 0.28);
+}
+
+[data-theme="dark"] .brand-card-logo,
+html.dark .brand-card-logo {
+  background: rgba(255, 255, 255, 0.035);
+}
+
+@media (max-width: 767px) {
+  .brand-card {
+    border-radius: 14px;
+  }
+}
+
+/* ─── SAFETY NET: brand cards must never stay invisible ───
+   .reveal-up sets opacity:0 and relies on GSAP to animate in.
+   If GSAP fails to load or the ScrollTrigger never fires, the
+   cards would be stuck invisible. This guarantees visibility. */
+.brands-grid .brand-card.reveal-up {
+  opacity: 1;
+  transform: none;
+}
+
+/* ─── Brands section — dark mode redesign ───
+   The inline pastel tile backgrounds glare on dark pages.
+   Replace them with uniform dark-glass tiles + brand text that
+   stays readable, plus a gold ambient hover glow. */
+[data-theme="dark"] .brands-section,
+html.dark .brands-section,
+body.dark .brands-section {
+  background: transparent;
+}
+
+[data-theme="dark"] .brand-card,
+html.dark .brand-card,
+body.dark .brand-card {
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.015));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+/* Kill the glaring pastel inline tile → soft glass tile */
+[data-theme="dark"] .brand-card-logo,
+html.dark .brand-card-logo,
+body.dark .brand-card-logo {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+/* Brighten brand text so dark fills (Kraft Heinz etc.) stay visible */
+[data-theme="dark"] .brand-card-logo svg text,
+html.dark .brand-card-logo svg text,
+body.dark .brand-card-logo svg text {
+  filter: brightness(1.9) saturate(1.15);
+}
+
+[data-theme="dark"] .brand-card:hover,
+html.dark .brand-card:hover,
+body.dark .brand-card:hover {
+  transform: translateY(-6px);
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.025));
+  border-color: rgba(245, 197, 66, 0.4);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.5),
+              0 0 0 1px rgba(245, 197, 66, 0.12),
+              0 0 32px rgba(245, 197, 66, 0.08);
+}
+
+[data-theme="dark"] .brand-card:hover .brand-card-logo,
+html.dark .brand-card:hover .brand-card-logo,
+body.dark .brand-card:hover .brand-card-logo {
+  background: rgba(255, 255, 255, 0.09) !important;
+  border-color: rgba(245, 197, 66, 0.3);
+}
+
+[data-theme="dark"] .brand-card-name,
+html.dark .brand-card-name,
+body.dark .brand-card-name {
+  color: rgba(255, 255, 255, 0.75);
+  letter-spacing: 0.01em;
+}
+
+[data-theme="dark"] .brand-card:hover .brand-card-name,
+html.dark .brand-card:hover .brand-card-name,
+body.dark .brand-card:hover .brand-card-name {
+  color: var(--gold-primary, #F5C542);
+}
+
