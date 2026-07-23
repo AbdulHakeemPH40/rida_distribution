@@ -2901,6 +2901,17 @@ a.contact-card:focus-visible {
   line-height: 1.3;
 }
 
+a.brand-card-link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+a.brand-card-link:focus-visible {
+  outline: 2px solid var(--green-primary, #1f7a4d);
+  outline-offset: 3px;
+}
+
 [data-theme="dark"] .brand-card,
 html.dark .brand-card,
 body.dark .brand-card {
