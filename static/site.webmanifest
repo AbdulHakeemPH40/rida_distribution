@@ -1,0 +1,61 @@
+{
+  "name": "R i D A - Reliable Innovative Distribution Alliance",
+  "short_name": "RiDA",
+  "description": "UAE FMCG import and distribution company delivering global brands to local shelves across all emirates.",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0A2014",
+  "theme_color": "#0A2014",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": [
+    "business",
+    "shopping"
+  ],
+  "icons": [
+    {
+      "src": "assets/logos/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/logos/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/logos/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "assets/images/screenshot-wide.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "form_factor": "wide",
+      "label": "R i D A FMCG distribution across the UAE"
+    },
+    {
+      "src": "assets/images/screenshot-narrow.jpg",
+      "sizes": "750x1334",
+      "type": "image/jpeg",
+      "form_factor": "narrow",
+      "label": "R i D A logistics and last-mile delivery"
+    },
+    {
+      "src": "assets/images/og-image.jpg",
+      "sizes": "1200x630",
+      "type": "image/jpeg",
+      "form_factor": "wide",
+      "label": "R i D A warehouse and distribution operations"
+    }
+  ]
+}

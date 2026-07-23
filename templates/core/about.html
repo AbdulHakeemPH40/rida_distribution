@@ -1,0 +1,151 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About | {{ SITE_NAME }} — {{ SITE_TAGLINE }}{% endblock %}
+
+{% block body_class %}page-about{% endblock %}
+
+{% block content %}
+<h1 class="seo-sr-only">About R i D A — Reliable Innovative Distribution Alliance</h1>
+
+
+  <!-- Scroll progress bar -->
+  
+
+  <!-- ═══════════════ NAVBAR ═══════════════ -->
+  
+
+  <!-- Mobile Drawer -->
+  
+
+  <!-- ═══════════════ ABOUT HERO ═══════════════ -->
+  <section class="section" id="about-hero" style="padding: 140px 0 0; text-align: center;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label" data-en="About R i D A" data-ar="عن ريدا">About R i D A</span>
+        <h2 class="section-title" data-en="Reliable Innovative Distribution Alliance" data-ar="موثوقة مبتكرة تحالف توزيع">Reliable Innovative Distribution Alliance</h2>
+        <p style="max-width: 650px; margin: 0 auto; color: var(--muted-green, #6B9E7B); font-size: 1.05rem;"
+          data-en="Learn about who we are, what we stand for, and where we're heading — the pillars that define R i D A."
+          data-ar="تعرف على من نحن، وما نمثله، وإلى أين نتجه — الركائز التي تحدد ريدا.">
+          Learn about who we are, what we stand for, and where we're heading — the pillars that define R i D A.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ ABOUT: WHO WE ARE ═══════════════ -->
+  <section class="section" id="about" style="padding-top: 0;">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text">
+          <span class="section-label" data-en="Who We Are" data-ar="من نحن">Who We Are</span>
+          <h2 class="about-headline" data-en="Reliable Innovative Distribution Alliance" data-ar="موثوقة مبتكرة تحالف توزيع">Reliable Innovative Distribution Alliance</h2>
+          <p class="about-description reveal-up" data-en="R i D A is a UAE-based FMCG import and distribution company delivering global brands to local shelves across all emirates. We handle everything from sourcing and compliance to warehousing, distribution, and retail activation." data-ar="ريدا هي شركة استيراد وتوزيع سلع استهلاكية سريعة الحركة مقرها الإمارات، توصل العلامات التجارية العالمية إلى الرفوف المحلية عبر الإمارات. نتولى كل شيء من التوريد والامتثال إلى التخزين والتوزيع وتفعيل المبيعات.">
+            R i D A is a UAE-based FMCG import and distribution company delivering global brands to local shelves across
+            all emirates. We handle everything from sourcing and compliance to warehousing, distribution, and
+            retail activation.</p>
+        </div>
+
+        <div class="about-image reveal-right">
+          <figure class="about-photo">
+            <img src="{% static 'assets/images/stock/warehouse.jpg' %}" alt="Modern FMCG distribution warehouse with stocked racks" loading="lazy">
+          </figure>
+        </div>
+      </div>
+
+      <!-- Four Pillars -->
+      <div class="pillars-grid stagger-cards">
+        <div class="pillar-card card reveal-up">
+          <div class="pillar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg></div>
+          <h4 class="pillar-title" data-en="Trust" data-ar="الثقة">Trust</h4>
+          <p class="pillar-text" data-en="Building lasting partnerships with brands and retailers through transparency and consistency." data-ar="بناء شراكات دائمة مع العلامات التجارية وتجار التجزئة من خلال الشفافية والاتساق.">Building lasting
+            partnerships with brands and retailers through transparency and consistency.</p>
+        </div>
+
+        <div class="pillar-card card reveal-up">
+          <div class="pillar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1.3.5 2.6 1.5 3.5.8.8 1.3 1.5 1.5 2.5"></path>
+              <path d="M9 18h6"></path>
+              <path d="M10 22h4"></path>
+            </svg></div>
+          <h4 class="pillar-title" data-en="Innovation" data-ar="الابتكار">Innovation</h4>
+          <p class="pillar-text" data-en="Embracing modern logistics, data-driven planning, and digital supply chain solutions." data-ar="احتضان الخدمات اللوجستية الحديثة والتخطيط القائم على البيانات وحلول سلسلة التوريد الرقمية.">
+            Embracing modern logistics, data-driven planning, and digital supply chain solutions.</p>
+        </div>
+
+        <div class="pillar-card card reveal-up">
+          <div class="pillar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"></circle>
+              <circle cx="12" cy="12" r="6"></circle>
+              <circle cx="12" cy="12" r="2"></circle>
+            </svg></div>
+          <h4 class="pillar-title" data-en="Precision" data-ar="الدقة">Precision</h4>
+          <p class="pillar-text" data-en="Delivering with accuracy, compliance, and attention to every detail in the supply chain." data-ar="التسليم بالدقة والامتثال والاهتمام بكل تفصيل في سلسلة التوريد.">Delivering with accuracy,
+            compliance, and attention to every detail in the supply chain.</p>
+        </div>
+
+        <div class="pillar-card card reveal-up">
+          <div class="pillar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+              <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+            </svg></div>
+          <h4 class="pillar-title" data-en="Partnership" data-ar="الشراكة">Partnership</h4>
+          <p class="pillar-text" data-en="Growing together with clients and suppliers — sustainable partnerships that last." data-ar="ننمو معاً مع عملائنا وموردينا — شراكات مستدامة تدوم.">Growing together with clients and
+            suppliers — sustainable partnerships that last.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ VISION ═══════════════ -->
+  <section class="section section-dark" id="vision">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label" data-en="Our Purpose" data-ar="غايتنا">Our Purpose</span>
+        <h2 class="section-title" data-en="Vision & Mission" data-ar="الرؤية والرسالة">Vision & Mission</h2>
+        <p class="section-subtitle reveal-up"
+          data-en="The ambition that guides us, and the purpose that drives every partnership."
+          data-ar="الطموح الذي يوجهنا، والغاية التي تدفع كل شراكة نبنيها.">
+          The ambition that guides us, and the purpose that drives every partnership.</p>
+      </div>
+
+      <div class="vm-grid reveal-up">
+        <!-- Vision Column -->
+        <div class="vm-col vm-vision">
+          <div class="vm-badge" data-en="Vision" data-ar="رؤيتنا">Vision</div>
+          <div class="vm-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="vm-svg" aria-hidden="true">
+              <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+          </div>
+          <p class="vm-headline"
+            data-en="To be the world's most trusted FMCG distribution partner — empowering global brands to expand into new markets with confidence."
+            data-ar="أن نكون شريك التوزيع الأكثر ثقة في العالم لمنتجات السلع الاستهلاكية سريعة الحركة — نمكّن العلامات التجارية العالمية من التوسع في أسواق جديدة بثقة.">
+            To be the world's most trusted FMCG distribution partner — empowering global brands to expand into new markets with confidence.</p>
+        </div>
+
+        <!-- Mission Column -->
+        <div class="vm-col vm-mission">
+          <div class="vm-badge" data-en="Mission" data-ar="مهمتنا">Mission</div>
+          <div class="vm-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="vm-svg" aria-hidden="true">
+              <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+              <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+            </svg>
+          </div>
+          <p class="vm-headline"
+            data-en="To connect the world's leading FMCG brands with businesses and consumers through reliable, efficient, and scalable distribution solutions across global markets."
+            data-ar="ربط أبرز العلامات التجارية العالمية للسلع الاستهلاكية سريعة الحركة بالشركات والمستهلكين من خلال حلول توزيع موثوقة وفعّالة وقابلة للتوسع عبر الأسواق العالمية.">
+            To connect the world's leading FMCG brands with businesses and consumers through reliable, efficient, and scalable distribution solutions across global markets.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+{% endblock %}

@@ -1,0 +1,1401 @@
+{
+  "brands": [
+    {
+      "id": "oishi",
+      "name": "Oishi",
+      "logo": "assets/images/brands/oishi.png",
+      "page": "brands/oishi.html",
+      "rawCount": 27,
+      "productCount": 27,
+      "products": [
+        {
+          "code": "100167373",
+          "name": "Bread Pan Buttered Toast",
+          "fullName": "Oishi Bread Pan 42Gm Buttered Toast",
+          "unit": "PCS",
+          "price": 1.95
+        },
+        {
+          "code": "100167370",
+          "name": "Bread Pan Cheese&Onion",
+          "fullName": "Oishi Bread Pan 42Gm Cheese&Onion",
+          "unit": "PCS",
+          "price": 2.0
+        },
+        {
+          "code": "100165303",
+          "name": "Bread Pan Toasted Garlic",
+          "fullName": "Oishi Bread Pan Toasted 42Gm Garlic",
+          "unit": "PCS",
+          "price": 1.0
+        },
+        {
+          "code": "100073794",
+          "name": "Crispy Patata Potato Flavour",
+          "fullName": "Oishi Crispy Patata 90Gm Potato Flavour",
+          "unit": "PCS",
+          "price": 3.95
+        },
+        {
+          "code": "100205425",
+          "name": "Fish Cracker",
+          "fullName": "Oishi Fish Cracker 90Gm",
+          "unit": "PCS",
+          "price": 3.95
+        },
+        {
+          "code": "100206349",
+          "name": "Fishda Fish Kropeck Cracker",
+          "fullName": "Oishi Fishda Fish Kropeck Cracker 80Gm",
+          "unit": "PCS",
+          "price": 5.95
+        },
+        {
+          "code": "100212895",
+          "name": "Kirei Yummy Spicy Shrimp",
+          "fullName": "Oishi Kirei Yummy Spicy Shrimp 60Gm",
+          "unit": "PCS",
+          "price": 0.0
+        },
+        {
+          "code": "100165304",
+          "name": "Marty'S Cracklin Plain Salted",
+          "fullName": "Oishi Marty'S Cracklin 90Gm Plain Salted",
+          "unit": "PCS",
+          "price": 3.95
+        },
+        {
+          "code": "100090634",
+          "name": "Martys Cracklin Salt&Vinegar",
+          "fullName": "Oishi Martys Cracklin 90Gm Salt&Vinegar",
+          "unit": "PCS",
+          "price": 3.5
+        },
+        {
+          "code": "100090621",
+          "name": "Martys Cracklin Spicy Vinegar",
+          "fullName": "Oishi Martys Cracklin 90Gm Spicy Vinegar",
+          "unit": "PCS",
+          "price": 5.5
+        },
+        {
+          "code": "100205426",
+          "name": "Pillows Chocolate Crackers",
+          "fullName": "Oishi Pillows Chocolate Crackers 150Gm",
+          "unit": "PCS",
+          "price": 6.0
+        },
+        {
+          "code": "100032477",
+          "name": "Potato Fries Bbq",
+          "fullName": "Oishi Potato Fries 60Gm Bbq",
+          "unit": "PCS",
+          "price": 2.9
+        },
+        {
+          "code": "100032478",
+          "name": "Potato Fries Cheese",
+          "fullName": "Oishi Potato Fries 50Gm Cheese",
+          "unit": "PCS",
+          "price": 3.25
+        },
+        {
+          "code": "100048280",
+          "name": "Potato Fries Ketchup",
+          "fullName": "Oishi Potato Fries 50Gm Ketchup",
+          "unit": "PCS",
+          "price": 0.0
+        },
+        {
+          "code": "100050933",
+          "name": "Potato Fries Plain Salted",
+          "fullName": "Oishi Potato Fries 50Gm Plain Salted",
+          "unit": "PCS",
+          "price": 3.5
+        },
+        {
+          "code": "100038059",
+          "name": "Prawn Crackers",
+          "fullName": "Oishi Prawn Crackers 90Gm",
+          "unit": "PCS",
+          "price": 3.95
+        },
+        {
+          "code": "100015942",
+          "name": "Prawn Crackers Chips",
+          "fullName": "Oishi Prawn Crackers Chips 60Gm",
+          "unit": "PCS",
+          "price": 3.5
+        },
+        {
+          "code": "100016256",
+          "name": "Prawn Crackers Chips Spicy",
+          "fullName": "Oishi Prawn Crackers Chips 60Gm Spicy",
+          "unit": "PCS",
+          "price": 3.25
+        },
+        {
+          "code": "100020294",
+          "name": "Prawn Crackers Chips Sweet&Ex",
+          "fullName": "Oishi Prawn Crackers Chips 60Gm Sweet&Ex",
+          "unit": "PCS",
+          "price": 3.25
+        },
+        {
+          "code": "100045135",
+          "name": "Prawn Crackers Spicy",
+          "fullName": "Oishi Prawn Crackers 90Gm Spicy",
+          "unit": "PCS",
+          "price": 3.95
+        },
+        {
+          "code": "100165308",
+          "name": "Prawn Crackers Sweet&Extra Ho",
+          "fullName": "Oishi Prawn Crackers 90Gm Sweet&Extra Ho",
+          "unit": "PCS",
+          "price": 3.95
+        },
+        {
+          "code": "100180118",
+          "name": "Ribbed Cracklings Salt & Vine",
+          "fullName": "Oishi Ribbed Cracklings 50Gm Salt & Vine",
+          "unit": "PCS",
+          "price": 2.95
+        },
+        {
+          "code": "100183945",
+          "name": "Ribbed Cracklings Salt&Vinega",
+          "fullName": "Oishi Ribbed Cracklings 90Gm Salt&Vinega",
+          "unit": "PCS",
+          "price": 4.95
+        },
+        {
+          "code": "100167376",
+          "name": "Rinbee Cheese Sticks",
+          "fullName": "Oishi Rinbee Cheese Sticks 85Gm",
+          "unit": "PCS",
+          "price": 0.0
+        },
+        {
+          "code": "100212870",
+          "name": "Smart C+ Calamansi",
+          "fullName": "Oishi Smart C+ Calamansi 350Ml",
+          "unit": "PCS",
+          "price": 0.0
+        },
+        {
+          "code": "100212871",
+          "name": "Smart C+ Dalandan",
+          "fullName": "Oishi Smart C+ Dalandan 350Ml",
+          "unit": "PCS",
+          "price": 0.0
+        },
+        {
+          "code": "100212872",
+          "name": "Smart C+ Pomelo Grapefruit",
+          "fullName": "Oishi Smart C+ Pomelo Grapefruit 350Ml",
+          "unit": "PCS",
+          "price": 0.0
+        }
+      ]
+    },
+    {
+      "id": "nissin",
+      "name": "Nissin",
+      "logo": "assets/images/brands/nissin.png",
+      "page": "brands/nissin.html",
+      "rawCount": 22,
+      "productCount": 16,
+      "products": [
+        {
+          "code": "100012049",
+          "name": "Cup Noodles Beef",
+          "fullName": "Nissin Cup Noodles 60Gm Beef",
+          "unit": "PCS",
+          "price": 4.5
+        },
+        {
+          "code": "100026629",
+          "name": "Cup Noodles Bulalo",
+          "fullName": "Nissin Cup Noodles 60Gm Bulalo",
+          "unit": "PCS",
+          "price": 4.5
+        },
+        {
+          "code": "100219853",
+          "name": "Cup Noodles Bullalo",
+          "fullName": "Nissin Cup Noodles 40Gm Bullalo",
+          "unit": "PCS",
+          "price": 0.0
+        },
+        {
+          "code": "100219849",
+          "name": "Cup Noodles Cheesy Seafood",
+          "fullName": "Nissin Cup Noodles 40Gm Cheesy Seafood",
+          "unit": "PCS",
+          "price": 0.0
+        },
+        {
+          "code": "100012048",
+          "name": "Cup Noodles Chicken",
+          "fullName": "Nissin Cup Noodles 60Gm Chicken",
+          "unit": "PCS",
+          "price": 4.5
+        },
+        {
+          "code": "100135015",
+          "name": "Cup Noodles Creamy Seafood",
+          "fullName": "Nissin Cup Noodles 40Gm Creamy Seafood",
+          "unit": "PCS",
+          "price": 0.0
+        },
+        {
+          "code": "100012047",
+          "name": "Cup Noodles Seafood",
+          "fullName": "Nissin Cup Noodles 60Gm Seafood",
+          "unit": "PCS",
+          "price": 4.5
+        },
+        {
+          "code": "100219856",
+          "name": "Cup Noodles Spicy Hot Beef",
+          "fullName": "Nissin Cup Noodles 40Gm Spicy Hot Beef",
+          "unit": "PCS",
+          "price": 0.0
+        },
+        {
+          "code": "100020159",
+          "name": "Cup Noodles Spicy Seafood",
+          "fullName": "Nissin Cup Noodles 60Gm Spicy Seafood",
+          "unit": "PCS",
+          "price": 3.95
+        },
+        {
+          "code": "100029961",
+          "name": "Eggnog Cookies",
+          "fullName": "Nissin Eggnog Cookies 130Gm",
+          "unit": "PCS",
+          "price": 4.95
+        },
+        {
+          "code": "100135043",
+          "name": "Instant Ramen Noodles Seafoo",
+          "fullName": "Nissin Instant Ramen Noodles 55Gm Seafoo",
+          "unit": "OUT",
+          "price": 8.95
+        },
+        {
+          "code": "100135040",
+          "name": "Instant Ramen Noodles Spicy",
+          "fullName": "Nissin Instant Ramen Noodles 59Gm Spicy",
+          "unit": "PCS",
+          "price": 1.99
+        },
+        {
+          "code": "100167386",
+          "name": "Ramen Noodles Beef",
+          "fullName": "Nissin Ramen Noodles 55Gm Beef",
+          "unit": "PCS",
+          "price": 1.75
+        },
+        {
+          "code": "100167387",
+          "name": "Ramen Noodles Chicken",
+          "fullName": "Nissin Ramen Noodles 55Gm Chicken",
+          "unit": "PCS",
+          "price": 1.5
+        },
+        {
+          "code": "100015915",
+          "name": "Yakisoba Cup Noodles Beef Sa",
+          "fullName": "Nissin Yakisoba Cup Noodles 77Gm Beef Sa",
+          "unit": "PCS",
+          "price": 4.5
+        },
+        {
+          "code": "100015914",
+          "name": "Yakisoba Cup Noodles Chicken",
+          "fullName": "Nissin Yakisoba Cup Noodles 77Gm Chicken",
+          "unit": "PCS",
+          "price": 4.5
+        }
+      ]
+    },
+    {
+      "id": "jack-n-jill",
+      "name": "Jack 'n Jill",
+      "logo": "assets/images/brands/jack n jill.png",
+      "page": "brands/jack-n-jill.html",
+      "rawCount": 23,
+      "productCount": 21,
+      "products": [
+        {
+          "code": "100020283",
+          "name": "Chicharron Palm Vinega",
+          "fullName": "Jack N' Jill Chicharron 90Gm Palm Vinega",
+          "unit": "PCS",
+          "price": 5.5
+        },
+        {
+          "code": "100020285",
+          "name": "Chicharron Vinegar Wit",
+          "fullName": "Jack N' Jill Chicharron 90Gm Vinegar Wit",
+          "unit": "PCS",
+          "price": 5.5
+        },
+        {
+          "code": "100020305",
+          "name": "Chippy Bbq",
+          "fullName": "Jack N' Jill Chippy 110Gm Bbq",
+          "unit": "PCS",
+          "price": 3.95
+        },
+        {
+          "code": "100020299",
+          "name": "Chippy Chili&Cheese",
+          "fullName": "Jack N' Jill Chippy 110Gm Chili&Cheese",
+          "unit": "PCS",
+          "price": 3.95
+        },
+        {
+          "code": "100029957",
+          "name": "Chippy Garlic&Vinegar",
+          "fullName": "Jack N' Jill Chippy 110Gm Garlic&Vinegar",
+          "unit": "PCS",
+          "price": 3.95
+        },
+        {
+          "code": "100116140",
+          "name": "Choco Knots",
+          "fullName": "Jack N Jill Choco Knots 28Gm",
+          "unit": "PCS",
+          "price": 0.0
+        },
+        {
+          "code": "100167327",
+          "name": "Mang Juan Chik'N Skin",
+          "fullName": "Jack N' Jill Mang Juan Chik'N Skin 70Gm",
+          "unit": "PCS",
+          "price": 0.0
+        },
+        {
+          "code": "100167331",
+          "name": "Maxx Candy 50'S Cherry",
+          "fullName": "Jack N' Jill Maxx Candy 50'S Cherry",
+          "unit": "PCS",
+          "price": 5.5
+        },
+        {
+          "code": "100205440",
+          "name": "Maxx Candy 50'S Extra Stren",
+          "fullName": "Jack N' Jill Maxx Candy 50'S Extra Stren",
+          "unit": "PCS",
+          "price": 0.0
+        },
+        {
+          "code": "100167329",
+          "name": "Maxx Candy 50'S Orange",
+          "fullName": "Jack N' Jill Maxx Candy 50'S Orange",
+          "unit": "PCS",
+          "price": 4.99
+        },
+        {
+          "code": "100167337",
+          "name": "Maxx Honey Candy 50'S Mansi",
+          "fullName": "Jack N' Jill Maxx Honey Candy 50'S Mansi",
+          "unit": "PCS",
+          "price": 4.99
+        },
+        {
+          "code": "100116143",
+          "name": "Milky Knots",
+          "fullName": "Jack N Jill Milky Knots 25Gm",
+          "unit": "PCS",
+          "price": 1.95
+        },
+        {
+          "code": "100012253",
+          "name": "Mr.Chips Cheese",
+          "fullName": "Jack N' Jill Mr.Chips 100Gm Cheese",
+          "unit": "PCS",
+          "price": 3.95
+        },
+        {
+          "code": "100016576",
+          "name": "Nova Country Cheddar Mu",
+          "fullName": "Jack N' Jill Nova Country 78G Cheddar Mu",
+          "unit": "PCS",
+          "price": 4.5
+        },
+        {
+          "code": "100024304",
+          "name": "Piattos Bbq",
+          "fullName": "Jack N' Jill Piattos Bbq 85Gm",
+          "unit": "PCS",
+          "price": 4.0
+        },
+        {
+          "code": "100020292",
+          "name": "Piattos Cheese",
+          "fullName": "Jack N' Jill Piattos 85Gm Cheese",
+          "unit": "PCS",
+          "price": 4.5
+        },
+        {
+          "code": "100167649",
+          "name": "Piattos Chips Roast Be",
+          "fullName": "Jack N' Jill Piattos Chips 85Gm Roast Be",
+          "unit": "PCS",
+          "price": 0.0
+        },
+        {
+          "code": "100038973",
+          "name": "Piattos Nacho Pizza",
+          "fullName": "Jack N' Jill Piattos Nacho Pizza 85Gm",
+          "unit": "PCS",
+          "price": 2.95
+        },
+        {
+          "code": "100015839",
+          "name": "Roller Coaster Cheddar",
+          "fullName": "Jack N' Jill Roller Coaster 85G Cheddar",
+          "unit": "PCS",
+          "price": 3.95
+        },
+        {
+          "code": "100020304",
+          "name": "Snacks Nova Bbq",
+          "fullName": "Jack N' Jill Snacks 78Gm Nova Bbq",
+          "unit": "PCS",
+          "price": 3.95
+        },
+        {
+          "code": "100020301",
+          "name": "Vcut Potato Chips Spic",
+          "fullName": "Jack N' Jill Vcut Potato Chips 60Gm Spic",
+          "unit": "PCS",
+          "price": 4.5
+        }
+      ]
+    },
+    {
+      "id": "mr-gulaman",
+      "name": "Mr. Gulaman",
+      "logo": "assets/images/brands/mr gulman.png",
+      "page": "brands/mr-gulaman.html",
+      "rawCount": 12,
+      "productCount": 8,
+      "products": [
+        {
+          "code": "100018561",
+          "name": "Jelly Powder Buko Pandan",
+          "fullName": "Mr Gulaman Jelly Powder 25Gm Buko Pandan",
+          "unit": "PCS",
+          "price": 2.25
+        },
+        {
+          "code": "100180117",
+          "name": "Jelly Powder Grapes",
+          "fullName": "Mr.Gulaman Jelly Powder 25Gm Grapes",
+          "unit": "PCS",
+          "price": 2.25
+        },
+        {
+          "code": "100018559",
+          "name": "Jelly Powder Green",
+          "fullName": "Mr.Gulaman Jelly Powder 25Gm Green",
+          "unit": "OUT",
+          "price": 5.0
+        },
+        {
+          "code": "100180116",
+          "name": "Jelly Powder Mango",
+          "fullName": "Mr.Gulaman Jelly Powder 25Gm Mango",
+          "unit": "PCS",
+          "price": 2.75
+        },
+        {
+          "code": "100180115",
+          "name": "Jelly Powder Orange",
+          "fullName": "Mr.Gulaman Jelly Powder 25Gm Orange",
+          "unit": "OUT",
+          "price": 9.95
+        },
+        {
+          "code": "100048290",
+          "name": "Jelly Powder Red",
+          "fullName": "Mr.Gulaman Jelly Powder 25Gm Red",
+          "unit": "PCS",
+          "price": 0.95
+        },
+        {
+          "code": "100180114",
+          "name": "Jelly Powder Strawberry",
+          "fullName": "Mr.Gulaman Jelly Powder 25Gm Strawberry",
+          "unit": "OUT",
+          "price": 9.95
+        },
+        {
+          "code": "100018558",
+          "name": "Jelly Powder Yellow",
+          "fullName": "Mr.Gulaman Jelly Powder 25Gm Yellow",
+          "unit": "OUT",
+          "price": 5.0
+        }
+      ]
+    },
+    {
+      "id": "bench",
+      "name": "Bench",
+      "logo": "assets/images/brands/bench.png",
+      "page": "brands/bench.html",
+      "rawCount": 15,
+      "productCount": 15,
+      "products": [
+        {
+          "code": "100021960",
+          "name": "Colonia Bubble Gum",
+          "fullName": "Bench Colonia 200Ml Bubble Gum",
+          "unit": "PCS",
+          "price": 0.0
+        },
+        {
+          "code": "100021958",
+          "name": "Colonia Cotton Candy",
+          "fullName": "Bench Colonia 200Ml Cotton Candy",
+          "unit": "PCS",
+          "price": 0.0
+        },
+        {
+          "code": "100101156",
+          "name": "Colonia Gummy Bear",
+          "fullName": "Baby Bench Colonia 200Ml Gummy Bear",
+          "unit": "PCS",
+          "price": 0.0
+        },
+        {
+          "code": "100021962",
+          "name": "Colonia Ice Mint",
+          "fullName": "Baby Bench Colonia 200Ml Ice Mint",
+          "unit": "PCS",
+          "price": 0.0
+        },
+        {
+          "code": "100032741",
+          "name": "Colonia Jelly Bean",
+          "fullName": "Bench Colonia 200Ml Jelly Bean",
+          "unit": "PCS",
+          "price": 0.0
+        },
+        {
+          "code": "100021961",
+          "name": "Colonia Lemon Drop",
+          "fullName": "Bench Colonia 200Ml Lemon Drop",
+          "unit": "PCS",
+          "price": 0.0
+        },
+        {
+          "code": "100021963",
+          "name": "Colonia Popsicle",
+          "fullName": "Bench Colonia 200Ml Popsicle",
+          "unit": "PCS",
+          "price": 0.0
+        },
+        {
+          "code": "100045854",
+          "name": "Daily Scent Cologne Bench",
+          "fullName": "Bench Daily Scent Cologne 125Ml Bench",
+          "unit": "PCS",
+          "price": 0.0
+        },
+        {
+          "code": "100039278",
+          "name": "Daily Scent Cologne Bubble P",
+          "fullName": "Bench Daily Scent Cologne 125Ml Bubble P",
+          "unit": "PCS",
+          "price": 0.0
+        },
+        {
+          "code": "100039280",
+          "name": "Daily Scent Cologne Eye Cand",
+          "fullName": "Bench Daily Scent Cologne 125Ml Eye Cand",
+          "unit": "PCS",
+          "price": 0.0
+        },
+        {
+          "code": "100049357",
+          "name": "Daily Scent Cologne Happy Ho",
+          "fullName": "Bench Daily Scent Cologne 125Ml Happy Ho",
+          "unit": "PCS",
+          "price": 0.0
+        },
+        {
+          "code": "100039277",
+          "name": "Daily Scent Cologne Indian S",
+          "fullName": "Bench Daily Scent Cologne 125Ml Indian S",
+          "unit": "PCS",
+          "price": 0.0
+        },
+        {
+          "code": "100039283",
+          "name": "Daily Scent Cologne Lazy Aft",
+          "fullName": "Bench Daily Scent Cologne 125Ml Lazy Aft",
+          "unit": "PCS",
+          "price": 0.0
+        },
+        {
+          "code": "100039279",
+          "name": "Daily Scent Cologne Spring B",
+          "fullName": "Bench Daily Scent Cologne 125Ml Spring B",
+          "unit": "PCS",
+          "price": 0.0
+        },
+        {
+          "code": "100039282",
+          "name": "Daily Scent Cologne Sunday M",
+          "fullName": "Bench Daily Scent Cologne 125Ml Sunday M",
+          "unit": "PCS",
+          "price": 0.0
+        }
+      ]
+    },
+    {
+      "id": "nestle",
+      "name": "Nestlé",
+      "logo": "assets/images/brands/nestle.png",
+      "page": "brands/nestle.html",
+      "rawCount": 13,
+      "productCount": 10,
+      "products": [
+        {
+          "code": "100024248",
+          "name": "All Purpose Cream",
+          "fullName": "Nestle All Purpose Cream 250Ml",
+          "unit": "PCS",
+          "price": 6.95
+        },
+        {
+          "code": "100219845",
+          "name": "Bear Brand Choco Powder Swak",
+          "fullName": "Nestle Bear Brand Choco Powder 29Gm Swak",
+          "unit": "PCS",
+          "price": 2.5
+        },
+        {
+          "code": "100219848",
+          "name": "Bear Brand Milk Powder",
+          "fullName": "Nestle Bear Brand Milk Powder 680Gm",
+          "unit": "PCS",
+          "price": 34.95
+        },
+        {
+          "code": "100167012",
+          "name": "Bear Brand Milk Powder Swak",
+          "fullName": "Nestle Bear Brand Milk Powder 33Gm Swak",
+          "unit": "PCS",
+          "price": 2.0
+        },
+        {
+          "code": "100056462",
+          "name": "Bear Brand Sterilized Fc Milk 200",
+          "fullName": "Nestle Bear Brand Sterilized Fc Milk 200",
+          "unit": "PCS",
+          "price": 4.0
+        },
+        {
+          "code": "100212893",
+          "name": "Carnation Everyday Creamer",
+          "fullName": "Nestle Carnation Everyday Creamer 200Ml",
+          "unit": "PCS",
+          "price": 0.0
+        },
+        {
+          "code": "100057512",
+          "name": "Chocolate Milk Chuckie",
+          "fullName": "Nestle Chocolate Milk 250Ml Chuckie",
+          "unit": "PCS",
+          "price": 3.95
+        },
+        {
+          "code": "100222756",
+          "name": "Chuckie Drink",
+          "fullName": "Nestle Chuckie Drink 110Ml",
+          "unit": "PCS",
+          "price": 0.0
+        },
+        {
+          "code": "100098944",
+          "name": "Milo Powder Pkt",
+          "fullName": "Nestle Milo Powder Pkt 24Gm",
+          "unit": "OUT",
+          "price": 15.0
+        },
+        {
+          "code": "100167339",
+          "name": "Milo Rtd Milk Chocomalt",
+          "fullName": "Nestle Milo Rtd Milk 180Ml Chocomalt",
+          "unit": "PCS",
+          "price": 4.0
+        }
+      ]
+    },
+    {
+      "id": "del-monte",
+      "name": "Del Monte",
+      "logo": "assets/images/brands/Delmonte.png",
+      "page": "brands/del-monte.html",
+      "rawCount": 13,
+      "productCount": 9,
+      "products": [
+        {
+          "code": "100212868",
+          "name": "Fruity Zing Apple Lychee",
+          "fullName": "Del Monte Fruity Zing 330Ml Apple Lychee",
+          "unit": "PCS",
+          "price": 0.0
+        },
+        {
+          "code": "100212869",
+          "name": "Fruity Zing Calamansi",
+          "fullName": "Del Monte Fruity Zing 330Ml Calamansi",
+          "unit": "PCS",
+          "price": 0.0
+        },
+        {
+          "code": "100012145",
+          "name": "Juice Pineapple 100%",
+          "fullName": "Del Monte Juice 240Ml Pineapple 100%",
+          "unit": "OUT",
+          "price": 14.95
+        },
+        {
+          "code": "100025034",
+          "name": "Spaghetti Sauce Filipino",
+          "fullName": "Del Monte Spaghetti Sauce 900Gm Filipino",
+          "unit": "PCS",
+          "price": 14.5
+        },
+        {
+          "code": "100011547",
+          "name": "Spaghetti Sauce Italian",
+          "fullName": "Del Monte Spaghetti Sauce 250Gm Italian",
+          "unit": "PCS",
+          "price": 5.95
+        },
+        {
+          "code": "100011545",
+          "name": "Spaghetti Sauce Sweet St",
+          "fullName": "Del Monte Spaghetti Sauce 250Gm Sweet St",
+          "unit": "PCS",
+          "price": 5.95
+        },
+        {
+          "code": "100212894",
+          "name": "Tidbits Pineapple ( Pouc",
+          "fullName": "Del Monte Tidbits Pineapple 115Gm ( Pouc",
+          "unit": "PCS",
+          "price": 2.95
+        },
+        {
+          "code": "100020523",
+          "name": "Tomato Sauce Original Styl",
+          "fullName": "Del Monte Tomato Sauce 1Kg Original Styl",
+          "unit": "PCS",
+          "price": 14.95
+        },
+        {
+          "code": "100025590",
+          "name": "Tomato Sauce Sweet Style",
+          "fullName": "Del Monte Tomato Sauce 200Gm Sweet Style",
+          "unit": "PCS",
+          "price": 3.5
+        }
+      ]
+    },
+    {
+      "id": "purefoods",
+      "name": "Purefoods",
+      "logo": "assets/images/brands/pure food.png",
+      "page": "brands/purefoods.html",
+      "rawCount": 7,
+      "productCount": 6,
+      "products": [
+        {
+          "code": "100223428",
+          "name": "Cornd Beef Hot & Spicy",
+          "fullName": "Purefood Cornd Beef 210Gm Hot & Spicy",
+          "unit": "PCS",
+          "price": 0.0
+        },
+        {
+          "code": "100207710",
+          "name": "Star Corned Beef",
+          "fullName": "Purefoods Star Corned Beef 150Gm",
+          "unit": "PCS",
+          "price": 0.0
+        },
+        {
+          "code": "100207830",
+          "name": "Star Corned Beef Asstd",
+          "fullName": "Purefoods Star Corned Beef 3X150Gm Asstd",
+          "unit": "PCS",
+          "price": 0.0
+        },
+        {
+          "code": "100031921",
+          "name": "T/Juicy Chicken Franks",
+          "fullName": "Pure Foods T/Juicy Chicken Franks 500Gm",
+          "unit": "PCS",
+          "price": 17.95
+        },
+        {
+          "code": "100033079",
+          "name": "T/Juicy Chicken Franks Cl",
+          "fullName": "Pure Foods T/Juicy Chicken Franks 1Kg Cl",
+          "unit": "PCS",
+          "price": 29.95
+        },
+        {
+          "code": "100040154",
+          "name": "T/Juicy Chicken Franks Ju",
+          "fullName": "Pure Foods T/Juicy Chicken Franks 1Kg Ju",
+          "unit": "PCS",
+          "price": 29.95
+        }
+      ]
+    },
+    {
+      "id": "lucky-me",
+      "name": "Lucky Me!",
+      "logo": "assets/images/brands/luckyme.png",
+      "page": "brands/lucky-me.html",
+      "rawCount": 11,
+      "productCount": 4,
+      "products": [
+        {
+          "code": "100219839",
+          "name": "Canton Noodle Kasalo Pack",
+          "fullName": "Lucky Me Canton Noodle Kasalo Pack 120Gm",
+          "unit": "PCS",
+          "price": 0.0
+        },
+        {
+          "code": "100012051",
+          "name": "Cup Noodles Chicken Sotang",
+          "fullName": "Lucky Me Cup Noodles 28Gm Chicken Sotang",
+          "unit": "OUT",
+          "price": 11.0
+        },
+        {
+          "code": "100012065",
+          "name": "Noodles Chicken",
+          "fullName": "Lucky Me Noodles 55Gm Chicken",
+          "unit": "OUT",
+          "price": 8.95
+        },
+        {
+          "code": "100012066",
+          "name": "Noodles Pkt Beef",
+          "fullName": "Lucky Me Noodles Pkt 55Gm Beef",
+          "unit": "OUT",
+          "price": 7.5
+        }
+      ]
+    },
+    {
+      "id": "century-tuna",
+      "name": "Century Tuna",
+      "logo": "assets/images/brands/century tuna.png",
+      "page": "brands/century-tuna.html",
+      "rawCount": 10,
+      "productCount": 10,
+      "products": [
+        {
+          "code": "100223429",
+          "name": "Adobo",
+          "fullName": "Century Tuna 155Gm Adobo",
+          "unit": "PCS",
+          "price": 0.0
+        },
+        {
+          "code": "100020355",
+          "name": "Afritada",
+          "fullName": "Century Tuna 155Gm Afritada",
+          "unit": "PCS",
+          "price": 3.99
+        },
+        {
+          "code": "100020356",
+          "name": "Caldereta",
+          "fullName": "Century Tuna 155Gm Caldereta",
+          "unit": "PCS",
+          "price": 3.75
+        },
+        {
+          "code": "100020362",
+          "name": "Chunks In Veg.Oil",
+          "fullName": "Century Tuna 184Gm Chunks In Veg.Oil",
+          "unit": "PCS",
+          "price": 6.95
+        },
+        {
+          "code": "100020361",
+          "name": "Chunks In Water",
+          "fullName": "Century Tuna 184Gm Chunks In Water",
+          "unit": "PCS",
+          "price": 6.95
+        },
+        {
+          "code": "100020328",
+          "name": "Flakes Afritada",
+          "fullName": "Century Tuna Flakes 180Gm Afritada",
+          "unit": "PCS",
+          "price": 5.5
+        },
+        {
+          "code": "100011580",
+          "name": "Flakes Caldereta",
+          "fullName": "Century Tuna Flakes 180Gm Caldereta",
+          "unit": "PCS",
+          "price": 4.95
+        },
+        {
+          "code": "100001754",
+          "name": "Flakes Hot&Spicy",
+          "fullName": "Century Tuna Flakes 180Gm Hot&Spicy",
+          "unit": "PCS",
+          "price": 6.5
+        },
+        {
+          "code": "100020354",
+          "name": "Flakes In Oil",
+          "fullName": "Century Tuna 155Gm Flakes In Oil",
+          "unit": "PCS",
+          "price": 4.95
+        },
+        {
+          "code": "100025222",
+          "name": "Hot&Spicy",
+          "fullName": "Century Tuna 420Gm Hot&Spicy",
+          "unit": "PCS",
+          "price": 11.99
+        }
+      ]
+    },
+    {
+      "id": "ufc",
+      "name": "UFC",
+      "logo": "assets/images/brands/ufc.png",
+      "page": "brands/ufc.html",
+      "rawCount": 11,
+      "productCount": 9,
+      "products": [
+        {
+          "code": "100045242",
+          "name": "Banana Catsup Hot&Spicy",
+          "fullName": "Ufc Banana Catsup 320Gm Hot&Spicy",
+          "unit": "PCS",
+          "price": 4.5
+        },
+        {
+          "code": "100011552",
+          "name": "Banana Sauce 320Gm",
+          "fullName": "Ufc Banana Sauce 320Gm(11.29)",
+          "unit": "PCS",
+          "price": 4.95
+        },
+        {
+          "code": "100011551",
+          "name": "Banana Sauce 320Gm ) Hot&Spicy",
+          "fullName": "Ufc Banana Sauce 320Gm(11Oz) Hot&Spicy",
+          "unit": "PCS",
+          "price": 3.95
+        },
+        {
+          "code": "100018545",
+          "name": "Canton Noodle",
+          "fullName": "Ufc Canton Noodle 227Gm",
+          "unit": "PCS",
+          "price": 6.95
+        },
+        {
+          "code": "100207906",
+          "name": "Pansit Canton Noodles",
+          "fullName": "Ufc Pansit Canton Noodles 400Gm",
+          "unit": "PCS",
+          "price": 13.95
+        },
+        {
+          "code": "100167625",
+          "name": "Ready Recipes Afritada",
+          "fullName": "Ufc Ready Recipes Afritada 200Gm",
+          "unit": "PCS",
+          "price": 4.95
+        },
+        {
+          "code": "100167626",
+          "name": "Ready Recipes Calderta",
+          "fullName": "Ufc Ready Recipes Calderta 200Gm",
+          "unit": "PCS",
+          "price": 4.95
+        },
+        {
+          "code": "100167667",
+          "name": "Sauce Ready Recipes Mechado",
+          "fullName": "Ufc Sauce 200Gm Ready Recipes Mechado",
+          "unit": "PCS",
+          "price": 5.95
+        },
+        {
+          "code": "100029476",
+          "name": "Spaghetti Sauce Sweet Filipino S",
+          "fullName": "Ufc Spaghetti Sauce 1Kg Sweet Filipino S",
+          "unit": "PCS",
+          "price": 17.95
+        }
+      ]
+    },
+    {
+      "id": "regent",
+      "name": "Regent",
+      "logo": "assets/images/brands/regent.png",
+      "page": "brands/regent.html",
+      "rawCount": 8,
+      "productCount": 8,
+      "products": [
+        {
+          "code": "100167648",
+          "name": "Cake Strawberry",
+          "fullName": "Regent Cake 200Gm Strawberry",
+          "unit": "PCS",
+          "price": 0.0
+        },
+        {
+          "code": "100165736",
+          "name": "Cake Ube",
+          "fullName": "Regent Cake 10X20Gm Ube",
+          "unit": "PCS",
+          "price": 0.0
+        },
+        {
+          "code": "100010914",
+          "name": "Cheese Ball",
+          "fullName": "Regent Cheese Ball 60Gm",
+          "unit": "PCS",
+          "price": 3.5
+        },
+        {
+          "code": "100012252",
+          "name": "Cheese Ring Snack",
+          "fullName": "Regent Cheese Ring Snack 60Gm",
+          "unit": "PCS",
+          "price": 4.0
+        },
+        {
+          "code": "100206346",
+          "name": "Melon Cake",
+          "fullName": "Regent Melon Cake 10X20Gm",
+          "unit": "PCS",
+          "price": 0.0
+        },
+        {
+          "code": "100165732",
+          "name": "Pandan Cake",
+          "fullName": "Regent Pandan Cake 10X20Gm",
+          "unit": "PCS",
+          "price": 0.0
+        },
+        {
+          "code": "100040596",
+          "name": "Snaku Crackers",
+          "fullName": "Regent Snaku Crackers 60Gm",
+          "unit": "PCS",
+          "price": 3.0
+        },
+        {
+          "code": "100049520",
+          "name": "Sweet Corn Snack",
+          "fullName": "Regent Sweet Corn Snack 60Gm",
+          "unit": "PCS",
+          "price": 3.0
+        }
+      ]
+    },
+    {
+      "id": "knorr",
+      "name": "Knorr",
+      "logo": "assets/images/brands/knorr.png",
+      "page": "brands/knorr.html",
+      "rawCount": 9,
+      "productCount": 8,
+      "products": [
+        {
+          "code": "100012024",
+          "name": "Beef Broth Cubes",
+          "fullName": "Knorr Beef Broth Cubes 60Gm",
+          "unit": "PCS",
+          "price": 4.5
+        },
+        {
+          "code": "100016725",
+          "name": "Chicken Broth Cubes",
+          "fullName": "Knorr Chicken Broth Cubes 60Gm",
+          "unit": "PCS",
+          "price": 4.75
+        },
+        {
+          "code": "100020515",
+          "name": "Chinese Soup Crab&Corn",
+          "fullName": "Knorr Chinese Soup 55Gm Crab&Corn",
+          "unit": "PCS",
+          "price": 5.5
+        },
+        {
+          "code": "100028120",
+          "name": "Cream Soup Mushroom",
+          "fullName": "Knorr Cream Soup 62Gm Mushroom",
+          "unit": "PCS",
+          "price": 0.0
+        },
+        {
+          "code": "100020531",
+          "name": "Shrimp Broth Cubes",
+          "fullName": "Knorr Shrimp Broth Cubes 60Gm",
+          "unit": "PCS",
+          "price": 3.95
+        },
+        {
+          "code": "100015939",
+          "name": "Sinigang Gabi Tamarind Soup",
+          "fullName": "Knorr Sinigang Gabi 22Gm Tamarind Soup",
+          "unit": "PCS",
+          "price": 2.5
+        },
+        {
+          "code": "100012021",
+          "name": "Sinigang Sampalok Mix",
+          "fullName": "Knorr Sinigang Sampalok Mix 20Gm",
+          "unit": "PCS",
+          "price": 2.5
+        },
+        {
+          "code": "100020512",
+          "name": "Tamarind (Sinigang)Soup Origi",
+          "fullName": "Knorr Tamarind (Sinigang)Soup 44Gm Origi",
+          "unit": "PCS",
+          "price": 3.5
+        }
+      ]
+    },
+    {
+      "id": "ajinomoto",
+      "name": "Ajinomoto",
+      "logo": "assets/images/brands/Ajinmoto.png",
+      "page": "brands/ajinomoto.html",
+      "rawCount": 8,
+      "productCount": 7,
+      "products": [
+        {
+          "code": "100020395",
+          "name": "Crispy Fry Garlic",
+          "fullName": "Ajinomoto Crispy Fry 62Gm Garlic",
+          "unit": "PCS",
+          "price": 3.95
+        },
+        {
+          "code": "100020396",
+          "name": "Crispy Fry Original",
+          "fullName": "Ajinomoto Crispy Fry 62Gm Original",
+          "unit": "PCS",
+          "price": 3.95
+        },
+        {
+          "code": "100020394",
+          "name": "Crispy Fry Spicy",
+          "fullName": "Ajinomoto Crispy Fry 62Gm Spicy",
+          "unit": "PCS",
+          "price": 3.95
+        },
+        {
+          "code": "100020399",
+          "name": "Ginisa Seaso.Mix",
+          "fullName": "Ajinomoto Ginisa 7Gm Seaso.Mix",
+          "unit": "OUT",
+          "price": 5.5
+        },
+        {
+          "code": "100147325",
+          "name": "Umami Seasoning",
+          "fullName": "Ajinomoto Umami Seasoning 500Gm",
+          "unit": "PCS",
+          "price": 14.95
+        },
+        {
+          "code": "100205436",
+          "name": "Umami Seasoning Gold",
+          "fullName": "Ajinomoto Umami Seasoning 50Gm Gold",
+          "unit": "PCS",
+          "price": 1.95
+        },
+        {
+          "code": "100032785",
+          "name": "Umami Seasoning Pkt",
+          "fullName": "Ajinomoto Umami Seasoning 100Gm Pkt",
+          "unit": "PCS",
+          "price": 3.75
+        }
+      ]
+    },
+    {
+      "id": "zonrox",
+      "name": "Zonrox",
+      "logo": "assets/images/brands/Zonrox.png",
+      "page": "brands/zonrox.html",
+      "rawCount": 8,
+      "productCount": 6,
+      "products": [
+        {
+          "code": "100190297",
+          "name": "Bleach Colorsafe Blossom F",
+          "fullName": "Zonrox Bleach Colorsafe 3600Ml Blossom F",
+          "unit": "PCS",
+          "price": 0.0
+        },
+        {
+          "code": "100190298",
+          "name": "Bleach Colorsafe Blossom Fr",
+          "fullName": "Zonrox Bleach Colorsafe 900Ml Blossom Fr",
+          "unit": "PCS",
+          "price": 0.0
+        },
+        {
+          "code": "100222799",
+          "name": "Bleach Floral Scent",
+          "fullName": "Zonrox Bleach 500Ml Floral Scent",
+          "unit": "PCS",
+          "price": 0.0
+        },
+        {
+          "code": "100222800",
+          "name": "Bleach Fresh Scent",
+          "fullName": "Zonrox Bleach 500Ml Fresh Scent",
+          "unit": "PCS",
+          "price": 0.0
+        },
+        {
+          "code": "100222801",
+          "name": "Bleach Lemon Scent",
+          "fullName": "Zonrox Bleach 500Ml Lemon Scent",
+          "unit": "PCS",
+          "price": 0.0
+        },
+        {
+          "code": "100222802",
+          "name": "Bleach Original",
+          "fullName": "Zonrox Bleach 500Ml Original",
+          "unit": "PCS",
+          "price": 0.0
+        }
+      ]
+    },
+    {
+      "id": "aqsa",
+      "name": "Aqsa",
+      "logo": "assets/images/brands/aqsa.png",
+      "page": "brands/aqsa.html",
+      "rawCount": 6,
+      "productCount": 6,
+      "products": [
+        {
+          "code": "100020209",
+          "name": "Aqsa Macaroni 400Gm Elbow",
+          "fullName": "Royal Macaroni 400Gm Elbow",
+          "unit": "PCS",
+          "price": 0.0
+        },
+        {
+          "code": "100147407",
+          "name": "Aqsa Pinoy Celebration (Spaghetti 700G+",
+          "fullName": "Royal Pinoy Celebration (Spaghetti 700G+",
+          "unit": "PCS",
+          "price": 19.45
+        },
+        {
+          "code": "100147406",
+          "name": "Aqsa R&T Cheesy Celebration (Spaghetti+",
+          "fullName": "Royal R&T Cheesy Celebration (Spaghetti+",
+          "unit": "PCS",
+          "price": 0.0
+        },
+        {
+          "code": "100019897",
+          "name": "Aqsa Spaghetti 400Gm",
+          "fullName": "Royal Spaghetti 400Gm",
+          "unit": "PCS",
+          "price": 8.5
+        },
+        {
+          "code": "100011982",
+          "name": "Aqsa Spaghetti 900Gm",
+          "fullName": "Royal Spaghetti 900Gm",
+          "unit": "PCS",
+          "price": 13.5
+        },
+        {
+          "code": "100147408",
+          "name": "Aqsa Sweet Celebration Spaghetti 700G+S",
+          "fullName": "Royal Sweet Celebration Spaghetti 700G+S",
+          "unit": "PCS",
+          "price": 19.45
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "source": "R i D A .xlsx",
+    "totalRows": 426,
+    "unmatchedCount": 223,
+    "unmatchedSample": [
+      "555 Fish Sardines 155Gm Escabeche",
+      "555 Sardines 155Gm In Tomato Sauce",
+      "555 Sardines Hot 155Gm In Tomato Sauce",
+      "555 Tuna 155Gm Adobo",
+      "555 Tuna 155Gm Bicol Express",
+      "555 Tuna 155Gm Hot&Spicy",
+      "Alaska Evaporada Cream 360Ml",
+      "Alaska Evaporada Creamer 154Ml",
+      "Anmum Materna Pregnant Milk Powder 375Gm",
+      "Anmum Materna Pregnant Milk Powder 375Gm",
+      "Annies Chocolate 200Gm Hany",
+      "Argentina Beef Loaf 150Gm",
+      "Argentina Beef Loaf 150Gm Hot & Spicy",
+      "Bakeats Rusk 100Gm Cardamom",
+      "Bakeats Rusk 100Gm Semolina",
+      "Barrio Fiesta Shrimp Paste 250Gm Spicy",
+      "Barrio Fiesta Shrimp Paste 250Gm Regular",
+      "Barrio Fiesta Shrimp Paste 250Gm Sweet",
+      "Besuto Prawn Cracker 100Gm Onion&Garlic",
+      "Besutp Prawn Crackers 100Gm",
+      "Bongga Carne Norte 150Gm",
+      "Bongga Carne Norte 150Gm Hot And Spicy",
+      "Bongga Carne Norte 3X150Gm Asstd",
+      "Boy Bawang Cornick 100Gm Lechon Manok",
+      "Boy Bawang Cornick 80Gm Chili Cheese",
+      "Boy Bawang Cornick 90Gm Adobo",
+      "Boy Bawang Cornick 90Gm Barbecue",
+      "Boy Bawang Cornick 90Gm Garlic",
+      "Boy Bawang Cornick 90Gm Hot Garlic",
+      "C2 Cool&Clean Green Tea 355Ml Apple",
+      "Cheez It Chips 60Gm Cheese Flavour",
+      "Cheez It Chips 95Gm Cheese Flavour",
+      "Cheez Whiz 210Gm Original",
+      "Cheez Whiz 440Gm Pimiento",
+      "Cheez Whiz Cheese Spread Pouch 105Gm Ori",
+      "Cheez Whiz Cheese Spread Pouch 60Gm Orig",
+      "Cheez Whiz Original 440Gm",
+      "Cheez Whiz Pimiento 220Gm",
+      "Cobra Energy Drink 350Ml Red",
+      "Cobra Energy Drink 350Ml Yellow"
+    ]
+  }
+}

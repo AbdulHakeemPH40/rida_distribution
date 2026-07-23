@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ brand.name }} — Product Portfolio | {{ SITE_NAME }}{% endblock %}
+{% block meta_description %}Explore the {{ brand.name }} product range distributed by R i D A across the UAE — {{ total_count }} products available for wholesale.{% endblock %}
+{% block body_class %}page-brand-detail{% endblock %}
+
+{% block content %}
+
+<!-- Breadcrumb -->
+<nav class="bd-breadcrumb" aria-label="Breadcrumb">
+  <div class="container">
+    <a href="{% url 'core:home' %}">Home</a>
+    <span aria-hidden="true">/</span>
+    <a href="{% url 'catalog:brand_list' %}">Brands</a>
+    <span aria-hidden="true">/</span>
+    <span aria-current="page">{{ brand.name }}</span>
+  </div>
+</nav>
+
+<!-- Brand Hero Card -->
+<header class="bd-hero">
+  <div class="container bd-hero-inner">
+    <div class="bd-hero-logo">
+      {% if brand.logo %}
+      <img src="{% static brand.logo %}" alt="{{ brand.name }}" width="180" height="90" loading="eager">
+      {% else %}
+      <span class="bd-hero-logo-text">{{ brand.name }}</span>
+      {% endif %}
+    </div>
+    <div class="bd-hero-info">
+      <span class="bd-hero-kicker">Brand Portfolio</span>
+      <h1 class="bd-hero-title">{{ brand.name }}</h1>
+      <div class="bd-hero-stats">
+        <span><strong>{{ total_count }}</strong> product{{ total_count|pluralize }}</span>
+        {% if brand.origin %}
+        <span aria-hidden="true">·</span>
+        <span>Origin: <strong>{{ brand.origin }}</strong></span>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Product Showcase -->
+<section class="bd-section">
+  <div class="container">
+
+    <!-- Toolbar -->
+    <form class="bd-toolbar" method="get" action="">
+      <div class="bd-search-box">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+        <input type="search" name="q" value="{{ search_q }}" placeholder="Search {{ brand.name }} products…" aria-label="Search products">
+        {% if search_q %}
+        <a href="{% url 'catalog:brand_detail' brand.slug %}" class="bd-search-clear" aria-label="Clear search">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </a>
+        {% endif %}
+      </div>
+
+      <div class="bd-sort">
+        <label for="bd-sort-select" class="bd-sort-label">Sort</label>
+        <select id="bd-sort-select" class="bd-sort-select" onchange="location=this.value;">
+          <option value="?sort=name{% if search_q %}&q={{ search_q|urlencode }}{% endif %}" {% if sort == 'name' or not sort %}selected{% endif %}>A → Z</option>
+          <option value="?sort=-name{% if search_q %}&q={{ search_q|urlencode }}{% endif %}" {% if sort == '-name' %}selected{% endif %}>Z → A</option>
+        </select>
+      </div>
+    </form>
+
+    <!-- Results count -->
+    <p class="bd-results-count">
+      Showing <strong>{{ product_count }}</strong> product{{ product_count|pluralize }}
+      {% if search_q %}matching <strong>&ldquo;{{ search_q }}&rdquo;</strong>{% endif %}
+    </p>
+
+    <!-- Product Grid -->
+    {% if products %}
+    <div class="bd-product-grid stagger-cards">
+      {% for p in products %}
+      <article class="bd-product-card reveal-up" style="--i:{{ forloop.counter0 }}">
+        <div class="bd-product-thumb" aria-hidden="true">
+          {% if p.image %}
+          <img src="{% static p.image %}" alt="{{ p.name }}" loading="lazy" width="120" height="120">
+          {% else %}
+          <span class="bd-product-initial">{{ p.name|first|upper }}</span>
+          {% endif %}
+        </div>
+        <div class="bd-product-body">
+          <h3 class="bd-product-name">{{ p.name }}</h3>
+          {% if p.unit %}
+          <span class="bd-product-unit">{{ p.unit }}</span>
+          {% endif %}
+        </div>
+        <a href="{% url 'core:home' %}#contact" class="bd-product-action" title="Enquire about {{ p.name }}">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+          Enquire
+        </a>
+      </article>
+      {% endfor %}
+    </div>
+    {% else %}
+    <!-- Empty State -->
+    <div class="bd-empty">
+      <div class="bd-empty-icon" aria-hidden="true">
+        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/>
+        </svg>
+      </div>
+      {% if brand.slug == 'aqsa' %}
+      <h2 class="bd-empty-title">Coming Soon</h2>
+      <p class="bd-empty-desc">The Aqsa product range is being finalized. Check back shortly or contact us for advance wholesale inquiries.</p>
+      {% else %}
+      <h2 class="bd-empty-title">No products found</h2>
+      <p class="bd-empty-desc">Try adjusting your search or browse the full catalog.</p>
+      <a href="{% url 'catalog:brand_detail' brand.slug %}" class="btn btn-outline">Clear search</a>
+      {% endif %}
+    </div>
+    {% endif %}
+
+    <!-- Bottom CTA -->
+    <div class="bd-cta-bar">
+      <div class="bd-cta-bar-text">
+        <h3>Interested in {{ brand.name }} products?</h3>
+        <p>Reach out for wholesale pricing, MOQs, and UAE-wide distribution details.</p>
+      </div>
+      <a href="{% url 'core:home' %}#contact" class="btn btn-primary btn-lg">Enquire Now</a>
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}

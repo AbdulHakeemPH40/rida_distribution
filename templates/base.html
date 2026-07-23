@@ -1,0 +1,546 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>{% block title %}{{ SITE_NAME }} | {{ SITE_TAGLINE }} — FMCG Import & Distribution UAE{% endblock %}</title>
+
+  
+  <meta name="description" content="{% block meta_description %}R i D A — Reliable Innovative Distribution Alliance. UAE trusted FMCG import and distribution company delivering global brands to local shelves across all Emirates.{% endblock %}">
+  <meta name="keywords"
+    content="FMCG distribution UAE, Dubai distribution company, UAE retail supply chain, FMCG import UAE, grocery distribution Dubai, frozen food distributor UAE, HORECA supplier Dubai, Dragon Mart distribution, R i D A, RiDA">
+  <meta name="author" content="R i D A">
+  <meta name="creator" content="R i D A">
+  <meta name="publisher" content="R i D A">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="bingbot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="format-detection" content="telephone=yes, address=yes, email=yes">
+  <meta name="geo.region" content="AE-DU">
+  <meta name="geo.placename" content="Dubai">
+  <meta name="geo.position" content="25.1784;55.4153">
+  <meta name="ICBM" content="25.1784, 55.4153">
+  <meta name="rating" content="general">
+  <meta name="revisit-after" content="7 days">
+  <meta name="distribution" content="global">
+  <meta name="language" content="English">
+  <meta http-equiv="content-language" content="en">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="RiDA">
+  <meta name="application-name" content="RiDA">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <!-- Favicon / PWA -->
+  <link rel="icon" href="{% static 'favicon.ico' %}" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/logos/favicon-32x32.png' %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/logos/favicon-16x16.png' %}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/logos/apple-touch-icon.png' %}">
+  <link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+  <link rel="manifest" href="{% static 'site.webmanifest' %}">
+  <meta name="theme-color" content="#0A2014">
+  <meta name="msapplication-TileColor" content="#0A2014">
+  <meta name="color-scheme" content="dark light">
+
+  <!-- Open Graph -->
+  <meta property="og:title"
+    content="R i D A | Reliable Innovative Distribution Alliance — FMCG Import & Distribution UAE">
+  <meta property="og:description"
+    content="UAE trusted FMCG import and distribution company. From source to shelf, in every emirate.">
+  <meta property="og:image" content="https://www.ridame.com/assets/images/og-image.jpg">
+  <meta property="og:image:secure_url" content="https://www.ridame.com/assets/images/og-image.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="R i D A — Reliable Innovative Distribution Alliance">
+  <meta property="og:url" content="{{ SITE_DOMAIN }}{{ request.path }}">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="R i D A">
+  <meta property="og:locale" content="en_AE">
+  <meta property="og:locale:alternate" content="ar_AE">
+  <meta property="og:locale:alternate" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title"
+    content="R i D A | Reliable Innovative Distribution Alliance — FMCG Import & Distribution UAE">
+  <meta name="twitter:description"
+    content="UAE trusted FMCG import and distribution company. From source to shelf, in every emirate.">
+  <meta name="twitter:image" content="https://www.ridame.com/assets/images/og-image.jpg">
+  <meta name="twitter:image:alt" content="R i D A — Reliable Innovative Distribution Alliance">
+  <meta name="twitter:url" content="https://www.ridame.com">
+
+  <link rel="canonical" href="{% block canonical %}{{ SITE_DOMAIN }}{{ request.path }}{% endblock %}">
+  <!-- Hreflang -->
+  <link rel="alternate" hreflang="en" href="https://www.ridame.com">
+  <link rel="alternate" hreflang="en-AE" href="https://www.ridame.com">
+  <link rel="alternate" hreflang="x-default" href="https://www.ridame.com">
+
+  <!-- Performance hints -->
+  <link rel="preload" as="image" href="{% static 'assets/images/stock/hero.jpg' %}" fetchpriority="high">
+  <link rel="preload" as="image" href="{% static 'assets/logos/logo_english.png' %}">
+  <link rel="preload" as="image" href="{% static 'assets/logos/logo_2_arabic.png' %}">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&family=Cairo:wght@700&family=Tajawal:wght@400;500&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&family=Cairo:wght@700&family=Tajawal:wght@400;500&display=swap" rel="stylesheet"></noscript>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/cinematic.css' %}">
+  <link rel="stylesheet" href="{% static 'css/catalog.css' %}">
+
+  <!-- JSON-LD Structured Data (SEO + AEO) -->
+  <script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ridame.com/#logo",
+      "url": "https://www.ridame.com/assets/logos/logo_english.png",
+      "contentUrl": "https://www.ridame.com/assets/logos/logo_english.png",
+      "caption": "R i D A logo",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "@type": [
+        "Organization",
+        "LocalBusiness",
+        "ProfessionalService"
+      ],
+      "@id": "https://www.ridame.com/#organization",
+      "name": "R i D A",
+      "legalName": "Reliable Innovative Distribution Alliance",
+      "alternateName": [
+        "RiDA",
+        "RIDA",
+        "Reliable Innovative Distribution Alliance",
+        "Reliable Innovative Distribution Alliance"
+      ],
+      "url": "https://www.ridame.com",
+      "logo": {
+        "@id": "https://www.ridame.com/#logo"
+      },
+      "image": [
+        "https://www.ridame.com/assets/images/og-image.jpg",
+        "https://www.ridame.com/assets/logos/logo_english.png"
+      ],
+      "description": "UAE-based FMCG import and distribution company delivering global brands to local shelves across all emirates. End-to-end sourcing, compliance, warehousing, logistics, and retail distribution.",
+      "slogan": "FROM SOURCE TO SHELF",
+      "email": "sales@ridame.com",
+      "telephone": "+971568860016",
+      "foundingLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Dubai",
+          "addressCountry": "AE"
+        }
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Office No - FD 58D, 1st Floor, Dragon Mart 2",
+        "addressLocality": "Dubai",
+        "addressRegion": "Dubai",
+        "addressCountry": "AE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 25.1784,
+        "longitude": 55.4153
+      },
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "United Arab Emirates"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Dubai"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Abu Dhabi"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Sharjah"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Ajman"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Umm Al Quwain"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Ras Al Khaimah"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Fujairah"
+        }
+      ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+971568860016",
+          "contactType": "sales",
+          "email": "sales@ridame.com",
+          "areaServed": "AE",
+          "availableLanguage": [
+            "English",
+            "Arabic"
+          ],
+          "url": "https://api.whatsapp.com/send?phone=971568860016"
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "customer support",
+          "telephone": "+971568860016",
+          "email": "sales@ridame.com",
+          "areaServed": "AE",
+          "availableLanguage": [
+            "English",
+            "Arabic"
+          ]
+        }
+      ],
+      "knowsLanguage": [
+        "en",
+        "ar"
+      ],
+      "currenciesAccepted": "AED",
+      "paymentAccepted": "Cash, Credit Card, Bank Transfer",
+      "priceRange": "$$",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+          ],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Multi-Category FMCG Portfolio",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Packaged & Processed Foods Distribution"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Beverages & Specialty Drinks Distribution"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Confectionery & Snacks Distribution"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Personal Care & Cosmetics Distribution"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Household & Cleaning Distribution"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Health & Hygiene Essentials Distribution"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Frozen Food Distribution"
+            }
+          }
+        ]
+      },
+      "makesOffer": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "FMCG Import & Distribution UAE",
+            "serviceType": "FMCG distribution",
+            "provider": {
+              "@id": "https://www.ridame.com/#organization"
+            },
+            "areaServed": "AE",
+            "description": "End-to-end FMCG import, regulatory compliance, cold chain, warehousing, and route-to-market distribution across the UAE."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "International Sourcing & Freight",
+            "serviceType": "Import logistics",
+            "provider": {
+              "@id": "https://www.ridame.com/#organization"
+            },
+            "areaServed": "AE"
+          }
+        }
+      ],
+      "sameAs": []
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.ridame.com/#website",
+      "url": "https://www.ridame.com",
+      "name": "R i D A",
+      "alternateName": "Reliable Innovative Distribution Alliance",
+      "description": "Official website of R i D A — Reliable Innovative Distribution Alliance. UAE FMCG import and distribution.",
+      "publisher": {
+        "@id": "https://www.ridame.com/#organization"
+      },
+      "inLanguage": [
+        "en",
+        "ar"
+      ],
+      "copyrightHolder": {
+        "@id": "https://www.ridame.com/#organization"
+      },
+      "copyrightYear": 2026
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.ridame.com/#webpage",
+      "url": "https://www.ridame.com",
+      "name": "R i D A | Reliable Innovative Distribution Alliance — FMCG Import & Distribution UAE",
+      "description": "R i D A — Reliable Innovative Distribution Alliance. UAE trusted FMCG import and distribution company delivering global brands to local shelves across all Emirates. Sourcing, compliance, cold chain, warehousing, and retail distribution.",
+      "isPartOf": {
+        "@id": "https://www.ridame.com/#website"
+      },
+      "about": {
+        "@id": "https://www.ridame.com/#organization"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://www.ridame.com/assets/images/og-image.jpg"
+      },
+      "inLanguage": "en",
+      "dateModified": "2026-07-22",
+      "breadcrumb": {
+        "@id": "https://www.ridame.com/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.ridame.com/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "R i D A",
+          "item": "https://www.ridame.com"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.ridame.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is R i D A?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "R i D A (Reliable Innovative Distribution Alliance) is a UAE-based FMCG import and distribution company delivering global brands to local shelves across all emirates."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does R i D A distribute?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "R i D A handles a multi-category FMCG portfolio including packaged and processed foods, beverages and specialty drinks, confectionery and snacks, personal care and cosmetics, household and cleaning, health and hygiene essentials, and frozen food."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which markets does R i D A serve in the UAE?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "R i D A serves supermarkets and retail, HORECA, wholesale marts, and e-commerce channels across the United Arab Emirates."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why partner with R i D A?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Partners work with R i D A for end-to-end supply chain control, UAE-wide cold chain infrastructure, regulatory and compliance expertise, multi-category portfolio strength, data-driven route-to-market, and financial stability."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I contact R i D A?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Contact R i D A by phone at +971568860016, email at sales@ridame.com, WhatsApp, or visit Office No - FD 58D, 1st Floor, Dragon Mart 2, Dubai, U.A.E."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+
+  {% block extra_head %}{% endblock %}
+</head>
+<body class="{% block body_class %}{% endblock %}">
+<div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- ═══════════════ NAVBAR ═══════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar-inner">
+      <a href="#" class="navbar-logo-link">
+        <img src="{% static 'assets/logos/logo_english.png' %}" data-logo-en="{% static 'assets/logos/logo_english.png' %}" data-logo-ar="{% static 'assets/logos/logo_2_arabic.png' %}" alt="R i D A Logo" class="navbar-logo">
+      </a>
+
+      <div class="navbar-links" id="navLinks">
+        <a href="{% url 'core:about' %}" data-en="About" data-ar="من نحن">About</a>
+        <a href="{% url 'core:home' %}#brands" data-en="Brands" data-ar="العلامات التجارية">Brands</a>
+        <a href="{% url 'core:home' %}#coverage" data-en="Coverage" data-ar="التغطية">Coverage</a>
+        <a href="{% url 'core:home' %}#contact" data-en="Contact" data-ar="اتصل بنا">Contact</a>
+      </div>
+
+      <div class="navbar-actions">
+        <button class="lang-toggle" id="langToggle" aria-label="Toggle language">EN | AR</button>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+          <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <div class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="mobile-drawer-head">
+      <img src="{% static 'assets/logos/logo_english.png' %}" data-logo-en="{% static 'assets/logos/logo_english.png' %}" data-logo-ar="{% static 'assets/logos/logo_2_arabic.png' %}" alt="R i D A" class="mobile-drawer-logo">
+      <button type="button" class="mobile-drawer-close" id="drawerClose" aria-label="Close menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <nav class="mobile-drawer-nav" aria-label="Mobile">
+      <a href="{% url 'core:about' %}" data-en="About" data-ar="من نحن">About</a>
+      <a href="{% url 'core:home' %}#brands" data-en="Brands" data-ar="العلامات التجارية">Brands</a>
+      <a href="{% url 'core:home' %}#coverage" data-en="Coverage" data-ar="التغطية">Coverage</a>
+      <a href="{% url 'core:home' %}#contact" data-en="Contact" data-ar="اتصل بنا">Contact</a>
+    </nav>
+    <div class="mobile-drawer-foot">
+      <a href="{% url 'core:home' %}#contact" class="mobile-drawer-cta" data-en="Get in Touch" data-ar="تواصل معنا">Get in Touch</a>
+      <p class="mobile-drawer-tag" data-en="FMCG Distribution · UAE" data-ar="توزيع السلع · الإمارات">FMCG Distribution
+        · UAE</p>
+    </div>
+  </div>
+  <div class="overlay" id="overlay"></div>
+
+  {% block content %}{% endblock %}
+
+<footer class="footer">
+    <div class="footer-watermark" aria-hidden="true">R i D A</div>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img id="footerLogo" src="{% static 'assets/logos/logo_english.png' %}" data-logo-en="{% static 'assets/logos/logo_english.png' %}" data-logo-ar="{% static 'assets/logos/logo_2_arabic.png' %}" alt="R i D A Logo" class="footer-logo" width="228" height="106">
+          <p class="footer-tagline"
+            data-en="Reliable Innovative Distribution Alliance — UAE's trusted FMCG distribution partner."
+            data-ar="ريدا — شريك التوزيع الموثوق في الإمارات للسلع الاستهلاكية سريعة الحركة.">Reliable Innovative
+            Distribution Alliance — UAE's trusted FMCG distribution partner.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading" data-en="Quick Links" data-ar="روابط سريعة">Quick Links</h4>
+          <div class="footer-links">
+            <a href="{% url 'core:about' %}" data-en="About Us" data-ar="من نحن">About Us</a>
+            <a href="{% url 'core:home' %}#brands" data-en="Brands" data-ar="العلامات التجارية">Brands</a>
+            <a href="{% url 'core:home' %}#contact" data-en="Contact" data-ar="اتصل بنا">Contact</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading" data-en="Contact Info" data-ar="معلومات الاتصال">Contact Info</h4>
+          <div class="footer-links">
+            <a href="tel:{{ SITE_PHONE }}">{{ SITE_PHONE_DISPLAY }}</a>
+            <a href="mailto:{{ SITE_EMAIL }}">{{ SITE_EMAIL }}</a>
+            <a href="https://api.whatsapp.com/send?phone={{ SITE_WHATSAPP }}&text=Hello%20R%20i%20D%20A%2C%20I%20would%20like%20to%20discuss%20a%20partnership."
+              target="_blank" rel="noopener noreferrer" data-en="WhatsApp Chat" data-ar="محادثة واتساب">WhatsApp
+              Chat</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Dragon+Mart+2+Dubai+UAE" target="_blank"
+              rel="noopener noreferrer" data-en="Dragon Mart 2, Dubai, U.A.E." data-ar="دراغون مارت 2، دبي">Dragon Mart
+              2, Dubai, U.A.E.</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2026 R i D A —
+          <span data-en="Reliable Innovative Distribution Alliance. All rights reserved." data-ar="ريدا — تحالف التوزيع المبتكر الموثوق. جميع الحقوق محفوظة.">Reliable Innovative Distribution Alliance. All rights reserved.</span>
+        </p>
+        <a href="#hero" class="back-to-top" aria-label="Back to top">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 19V5M5 12l7-7 7 7" />
+          </svg>
+          <span data-en="Back to top" data-ar="العودة للأعلى">Back to top</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="{% static 'js/main.js' %}" defer></script>
+<script src="{% static 'js/cinematic.js' %}" defer></script>
+<script src="{% static 'js/globe.js' %}" defer></script>
+  {% block extra_js %}{% endblock %}
+</body>
+</html>

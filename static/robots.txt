@@ -1,0 +1,35 @@
+# R i D A - ridame.com
+User-agent: *
+Allow: /
+
+# AI / answer-engine crawlers (AEO)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Disallow: /tools/
+Disallow: /__pycache__/
+Disallow: /.cortex/
+Disallow: /assets/images/supplier_backup_original/
+
+Sitemap: https://www.ridame.com/sitemap.xml
